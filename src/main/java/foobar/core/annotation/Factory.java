@@ -22,13 +22,17 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies a {@link Factory}.
+ * Identifies a {@link Factory}. Factories encapsulate the responsibility of creating complex objects in general and
+ * Aggregates in particular. Objects returned by the factory methods are guaranteed to be in valid state.
  *
  * @author Christian Stettler
  * @author Henning Schwendtner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
+ * @see AggregateRoot
+ * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
+ *      Reference (Evans) - Factories</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
