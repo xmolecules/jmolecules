@@ -4,9 +4,17 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>foobar</groupId>
-	<artifactId>foobar</artifactId>
+	<groupId>org.jddd</groupId>
+	<artifactId>jddd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>jDDD</name>
+	<description>Domain-Driven Design concepts in Java</description>
+
+	<modules>
+		<module>jddd-core</module>
+	</modules>
 
 	<build>
 		<plugins>

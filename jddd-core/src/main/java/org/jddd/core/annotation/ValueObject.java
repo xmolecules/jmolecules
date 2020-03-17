@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foobar.core.annotation;
+package org.jddd.core.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,21 +22,20 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies a {@link Factory}. Factories encapsulate the responsibility of creating complex objects in general and
- * Aggregates in particular. Objects returned by the factory methods are guaranteed to be in valid state.
+ * Identifies a value object. Domain concepts that are modeled as value objects have no conceptual identity or
+ * lifecycle. Implementations should be immutable, operations on it are side-effect free.
  *
  * @author Christian Stettler
  * @author Henning Schwendtner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
- * @see AggregateRoot
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Factories</a>
+ *      Reference (Evans) - Value objects</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
-public @interface Factory {
+public @interface ValueObject {
 
 }

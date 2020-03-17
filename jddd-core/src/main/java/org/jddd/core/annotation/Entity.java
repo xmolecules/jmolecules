@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package foobar.core.annotation;
+package org.jddd.core.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,25 +22,22 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies a {@link Repository}. Repositories simulate a collection of aggregates to which aggregate instances can be
- * added and removed. They usually also expose API to select a subset of aggregates matching certain criteria. Access to
- * projections of an aggregate might be provided as well but also via a dedicated separate abstraction.
- * <p>
- * Implementations use a dedicated persistence mechanism appropriate to the data structure and query requirements at
- * hand. However, they should make sure that no persistence mechanism specific APIs leak into client code.
+ * Identifies an {@link Entity}. Entities represent a thread of continuity and identity, going through a lifecycle,
+ * though their attributes may change. Means of identification may come from the outside, or it may be an arbitrary
+ * identifier created by and for the system, but it must correspond to the identity distinctions in the model. The model
+ * must define what it means to be the same thing.
  *
  * @author Christian Stettler
  * @author Henning Schwendtner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
- * @see AggregateRoot
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Repositories</a>
+ *      Reference (Evans) - Entities</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
-public @interface Repository {
+public @interface Entity {
 
 }
