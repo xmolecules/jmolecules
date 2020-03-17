@@ -14,6 +14,7 @@
 
 	<modules>
 		<module>jddd-core</module>
+		<module>jddd-events</module>
 		<module>jddd-examples</module>
 		<module>jddd-jpa</module>
 	</modules>
