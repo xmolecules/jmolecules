@@ -1,0 +1,14 @@
+= jDDD - Domain-Driven Design in Java
+
+This repository contains libraries to help developers work with DDD concepts in Java.
+It currently consists of the following artifacts:
+
+.Artifacts to express DDD concepts
+- link:jddd-core[`jddd-core`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
+- link:jddd-events[`jddd-events`] -- annotations and interfaces to express the concept of events in code.
+
+.Technology integration
+- link:jddd-jpa[`jddd-jpa`] -- A ByteBuddy plugin to derive default JPA mappings for code that expresses DDD building blocks via `jddd-core`.
+
+.Examples
+- link:jddd-examples[`jddd-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
