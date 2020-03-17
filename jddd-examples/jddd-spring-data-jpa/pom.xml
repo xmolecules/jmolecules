@@ -73,7 +73,7 @@
 		</dependency>
 
 	</dependencies>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -97,11 +97,11 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 	<repositories>
 		<repository>
 			<id>spring-libs-snapshot</id>
-			<url>htts://repo.spring.io/libs-snapshot</url>
+			<url>https://repo.spring.io/libs-snapshot</url>
 		</repository>
 	</repositories>
 
