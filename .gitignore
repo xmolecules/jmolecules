@@ -4,6 +4,7 @@
 .project
 .settings/
 .sts4-cache/
+.factorypath
 target/
 *.orig
 *.iml

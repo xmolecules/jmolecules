@@ -14,7 +14,15 @@
 
 	<modules>
 		<module>jddd-core</module>
+		<module>jddd-examples</module>
+		<module>jddd-jpa</module>
 	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<bytebuddy.version>1.10.8</bytebuddy.version>
+		<lombok.version>1.18.12</lombok.version>
+	</properties>
 
 	<build>
 		<plugins>
@@ -27,6 +35,13 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
+			<!-- Explicitly declared to use a version that supports JUnit 5 OOTB -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.2</version>
+			</plugin>
+
 		</plugins>
 	</build>
 
