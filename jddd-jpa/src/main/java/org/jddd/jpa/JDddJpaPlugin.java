@@ -2,6 +2,7 @@ package org.jddd.jpa;
 
 import static net.bytebuddy.matcher.ElementMatchers.*;
 
+import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.build.Plugin.NoOp;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.description.type.TypeDescription;
@@ -19,6 +20,7 @@ import org.jddd.core.types.Association;
 import org.jddd.core.types.Entity;
 import org.jddd.core.types.Identifier;
 
+@Slf4j
 public class JDddJpaPlugin extends NoOp {
 
 	@Override
@@ -32,8 +34,6 @@ public class JDddJpaPlugin extends NoOp {
 	 */
 	@Override
 	public Builder<?> apply(Builder<?> builder, TypeDescription type, ClassFileLocator classFileLocator) {
-
-		System.out.println("Processing " + type.getName());
 
 		if (type.isAssignableTo(Entity.class)) {
 			builder = handleEntity(builder, type);
@@ -50,18 +50,11 @@ public class JDddJpaPlugin extends NoOp {
 		return builder;
 	}
 
-	/**
-	 * @param builder
-	 * @param type
-	 * @return
-	 */
-	private Builder<?> handleIdentifier(Builder<?> builder, TypeDescription type) {
-
-		System.out.println("Processing identifier " + type.getName());
+	private static Builder<?> handleIdentifier(Builder<?> builder, TypeDescription type) {
 
 		if (!type.isAssignableTo(Serializable.class)) {
 
-			System.out.println("Adding Serializable to " + type.getName());
+			log.info("jDDD JPA Plugin - Adding Serializable to {}.", type.getName());
 
 			builder = builder.implement(Serializable.class);
 		}
@@ -69,28 +62,11 @@ public class JDddJpaPlugin extends NoOp {
 		return addAnnotationIfMissing(Embeddable.class, builder, type);
 	}
 
-	/**
-	 * @param builder
-	 * @param type
-	 * @return
-	 */
-	private Builder<?> handleAssociation(Builder<?> builder, TypeDescription type) {
+	private static Builder<?> handleAssociation(Builder<?> builder, TypeDescription type) {
 		return addAnnotationIfMissing(Embeddable.class, builder, type);
 	}
 
-	private Builder<?> handleEntity(Builder<?> builder, TypeDescription type) {
-
-		// MethodDescription superClassConstructor = findDefaultConstructor(type.getSuperClass());
-		//
-		// // Create no-arg constructor
-		// if (type.getDeclaredMethods().filter(ElementMatchers.isDefaultConstructor()).isEmpty()) {
-		//
-		// System.out.println("Adding default constructor to " + type.getName());
-		//
-		// builder = builder.defineConstructor(Visibility.PRIVATE) //
-		// .intercept();
-		// // .intercept(MethodCall.invoke(superClassConstructor).onSuper());
-		// }
+	private static Builder<?> handleEntity(Builder<?> builder, TypeDescription type) {
 
 		// Annotate identifier types
 		builder = builder
@@ -101,20 +77,16 @@ public class JDddJpaPlugin extends NoOp {
 		return addAnnotationIfMissing(javax.persistence.Entity.class, builder, type);
 	}
 
-	// private static MethodDescription findDefaultConstructor(Generic type) {
-	//
-	// MethodList<InGenericShape> defaultConstructor = type.getDeclaredMethods()
-	// .filter(ElementMatchers.isDefaultConstructor());
-	//
-	// return defaultConstructor.isEmpty() ? null : defaultConstructor.getOnly();
-	// }
-
 	private static Builder<?> addAnnotationIfMissing(Class<? extends Annotation> annotation, Builder<?> builder,
 			TypeDescription type) {
 
-		return type.getDeclaredAnnotations().isAnnotationPresent(annotation) //
-				? builder //
-				: builder.annotateType(getAnnotation(annotation));
+		if (type.getDeclaredAnnotations().isAnnotationPresent(annotation)) {
+			return builder;
+		}
+
+		log.info("jDDD JPA Plugin - Annotating {} with {}.", type.getName(), annotation.getName());
+
+		return builder.annotateType(getAnnotation(annotation));
 	}
 
 	private static AnnotationDescription getAnnotation(Class<? extends Annotation> type) {
