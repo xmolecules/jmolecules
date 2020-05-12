@@ -16,7 +16,7 @@
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>2.3.0.M1</version>
+				<version>2.3.0.RC1</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
@@ -58,6 +58,14 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>jddd-jpa</artifactId>
 			<version>${project.version}</version>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jddd-spring</artifactId>
+			<version>${project.version}</version>
+			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -89,6 +97,9 @@
 				</executions>
 				<configuration>
 					<transformations>
+						<transformation>
+							<plugin>org.jddd.spring.JDddSpringPlugin</plugin>
+						</transformation>
 						<transformation>
 							<plugin>org.jddd.jpa.JDddJpaPlugin</plugin>
 						</transformation>

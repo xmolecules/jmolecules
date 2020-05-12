@@ -8,11 +8,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>jddd-jpa</artifactId>
-	<name>jDDD - JPA support</name>
+	<artifactId>jddd-spring</artifactId>
+	<name>jDDD - Spring plugin</name>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>jddd-core</artifactId>
@@ -20,9 +19,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>jakarta.persistence</groupId>
-			<artifactId>jakarta.persistence-api</artifactId>
-			<version>2.2.3</version>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>5.2.6.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -43,7 +42,6 @@
 			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
 
 </project>

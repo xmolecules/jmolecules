@@ -18,12 +18,14 @@
 		<module>jddd-examples</module>
 		<module>jddd-jpa</module>
 		<module>jddd-archunit</module>
+		<module>jddd-spring</module>
 	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<bytebuddy.version>1.10.8</bytebuddy.version>
 		<lombok.version>1.18.12</lombok.version>
+		<slf4j.version>1.7.30</slf4j.version>
 	</properties>
 
 	<build>

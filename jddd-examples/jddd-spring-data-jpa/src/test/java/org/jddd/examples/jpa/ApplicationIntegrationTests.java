@@ -15,17 +15,29 @@
  */
 package org.jddd.examples.jpa;
 
+import static org.assertj.core.api.Assertions.*;
+
+import lombok.RequiredArgsConstructor;
+
+import org.jddd.examples.jpa.customer.CustomerManagement;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.assertj.AssertableApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author Oliver Drotbohm
  */
 @SpringBootTest
+@RequiredArgsConstructor
 class ApplicationIntegrationTests {
+
+	private final ConfigurableApplicationContext context;
 
 	@Test
 	void bootstrapsContainer() {
-		
+
+		assertThat(AssertableApplicationContext.get(() -> context)) //
+				.hasSingleBean(CustomerManagement.class);
 	}
 }
