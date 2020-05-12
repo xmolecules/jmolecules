@@ -8,6 +8,7 @@ It currently consists of the following artifacts:
 - link:jddd-events[`jddd-events`] -- annotations and interfaces to express the concept of events in code.
 
 .Technology integration
+- link:jddd-archunit[`jdd-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
 - link:jddd-jpa[`jddd-jpa`] -- A ByteBuddy plugin to derive default JPA mappings for code that expresses DDD building blocks via `jddd-core`.
 
 .Examples
