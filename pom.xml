@@ -4,7 +4,7 @@
 
 	<groupId>org.jddd</groupId>
 	<artifactId>jddd</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>jDDD</name>
@@ -183,7 +183,7 @@
 		<url>https://github.com/odrotbohm/jddd</url>
 		<connection>scm:git:https://github.com/odrotbohm/jddd</connection>
 		<developerConnection>scm:git:ssh://git@github.com/odrotbohm/jddd.git</developerConnection>
-		<tag>0.1.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 </project>
