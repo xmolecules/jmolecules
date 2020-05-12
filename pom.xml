@@ -11,6 +11,7 @@
 
 	<name>jDDD</name>
 	<description>Domain-Driven Design concepts in Java</description>
+	<url>https://github.com/odrotbohm/jddd</url>
 
 	<modules>
 		<module>jddd-core</module>
@@ -23,13 +24,73 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<assertj.version>3.15.0</assertj.version>
 		<bytebuddy.version>1.10.8</bytebuddy.version>
+		<junit.version>5.6.1</junit.version>
 		<lombok.version>1.18.12</lombok.version>
 		<slf4j.version>1.7.30</slf4j.version>
 	</properties>
 
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>odrotbohm</id>
+			<name>Oliver Drotbohm</name>
+			<email>odrotbohm@pivotal.io</email>
+			<organization>Pivotal Software, Inc.</organization>
+			<organizationUrl>https://pivotal.io</organizationUrl>
+		</developer>
+	</developers>
+
+	<profiles>
+		<profile>
+			<id>sonatype</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<additionalOptions>
+								<additionalOption>-Xdoclint:none</additionalOption>
+							</additionalOptions>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -40,13 +101,64 @@
 				</configuration>
 			</plugin>
 
-			<!-- Explicitly declared to use a version that supports JUnit 5 OOTB -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
 			</plugin>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>flatten-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>flatten</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>flatten</goal>
+						</goals>
+						<configuration>
+							<updatePomFile>true</updatePomFile>
+							<flattenMode>oss</flattenMode>
+							<pomElements>
+								<distributionManagement>remove</distributionManagement>
+								<properties>remove</properties>
+								<repositories>remove</repositories>
+								<profiles>remove</profiles>
+							</pomElements>
+						</configuration>
+					</execution>
+					<execution>
+						<id>flatten-clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
+
 	</build>
+
+	<scm>
+		<url>https://github.com/odrotbohm/jddd</url>
+		<connection>scm:git:https://github.com/odrotbohm/jddd</connection>
+		<developerConnection>scm:git:ssh://git@github.com/odrotbohm/jddd.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
 </project>

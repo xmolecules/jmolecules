@@ -10,3 +10,4 @@ target/
 *.iml
 *.ipr
 *.iws
+.flattened-pom.xml

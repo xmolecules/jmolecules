@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.8</version>
+			<version>${lombok.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
