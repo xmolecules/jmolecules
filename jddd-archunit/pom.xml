@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.jddd</groupId>
 		<artifactId>jddd</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>jddd-archunit</artifactId>
