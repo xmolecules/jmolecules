@@ -13,3 +13,8 @@ It currently consists of the following artifacts:
 
 .Examples
 - link:jddd-examples[`jddd-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
+
+== Release instructions
+
+* `mvn release:prepare -DscmReleaseCommitComment="$ticketId - Release version $version." -DscmDevelopmentCommitComment="$ticketId - Prepare next development iteration."`
+* `mvn release:perform`
