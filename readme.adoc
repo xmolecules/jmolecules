@@ -6,6 +6,7 @@ It currently consists of the following artifacts:
 .Artifacts to express DDD concepts
 - link:jddd-core[`jddd-core`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
 - link:jddd-events[`jddd-events`] -- annotations and interfaces to express the concept of events in code.
+- link:jddd-architecture[`jddd-architecture`] -- annotations to express architectural styles in code.
 
 .Technology integration
 - link:jddd-archunit[`jdd-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
