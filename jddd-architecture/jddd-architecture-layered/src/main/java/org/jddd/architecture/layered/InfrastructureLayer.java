@@ -24,10 +24,9 @@ import java.lang.annotation.Target;
  * Identifies the {@link InfrastructureLayer} in a layered architecture. The infrastructure layer supports the other
  * layers by providing technical capabilities such as persistence or message sending. Furthermore, it may also support
  * the other layers in their interactions by providing framework functionalities.
- *
+ * <p>
  * Provided infrastructure functionality is layer specific, i.e. functionality provided for the {@link InterfaceLayer}
  * (for example REST) must not be accessed by below layers.
- *
  *
  * @author Christian Stettler
  * @author Henning Schwendtner
@@ -35,9 +34,9 @@ import java.lang.annotation.Target;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- * Reference (Evans) - Layered Architecture</a>
+ *      Reference (Evans) - Layered Architecture</a>
  */
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.PACKAGE, ElementType.TYPE})
+@Target({ ElementType.PACKAGE, ElementType.TYPE })
 public @interface InfrastructureLayer {
 }

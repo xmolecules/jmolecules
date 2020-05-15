@@ -23,8 +23,9 @@ import java.lang.annotation.Target;
 /**
  * Identifies the {@link ApplicationLayer} in a layered architecture. The application layer is coordinating the
  * execution of business flows without containing business rules, but by utilizing the {@link DomainLayer}. It also
- * coordinates flows spanning other systems or bounded contexts and may keep information of the progress of the execution.
- *
+ * coordinates flows spanning other systems or bounded contexts and may keep information of the progress of the
+ * execution.
+ * <p>
  * Therefore, the application layer is a thin layer to enable the system to execute business flows.
  *
  * @author Christian Stettler
@@ -33,9 +34,9 @@ import java.lang.annotation.Target;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- * Reference (Evans) - Layered Architecture</a>
+ *      Reference (Evans) - Layered Architecture</a>
  */
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.PACKAGE, ElementType.TYPE})
+@Target({ ElementType.PACKAGE, ElementType.TYPE })
 public @interface ApplicationLayer {
 }

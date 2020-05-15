@@ -30,9 +30,9 @@ import java.lang.annotation.Target;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- * Reference (Evans) - Layered Architecture</a>
+ *      Reference (Evans) - Layered Architecture</a>
  */
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.PACKAGE, ElementType.TYPE})
+@Target({ ElementType.PACKAGE, ElementType.TYPE })
 public @interface InterfaceLayer {
 }
