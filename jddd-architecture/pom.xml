@@ -19,6 +19,7 @@
 
 	<modules>
 		<module>jddd-architecture-layered</module>
-	</modules>
+        <module>jddd-architecture-onion</module>
+    </modules>
 
 </project>
