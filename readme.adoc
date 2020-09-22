@@ -9,8 +9,9 @@ It currently consists of the following artifacts:
 - link:jddd-architecture[`jddd-architecture`] -- annotations to express architectural styles in code.
 
 .Technology integration
-- link:jddd-archunit[`jdd-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
+- link:jddd-archunit[`jddd-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
 - link:jddd-jpa[`jddd-jpa`] -- A ByteBuddy plugin to derive default JPA mappings for code that expresses DDD building blocks via `jddd-core`.
+- link:jddd-jpa[`jddd-spring`] -- A ByteBuddy plugin to derive Spring component annotations for code that expresses DDD building blocks via `jddd-core`.
 
 .Examples
 - link:jddd-examples[`jddd-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
