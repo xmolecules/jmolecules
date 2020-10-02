@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jddd.architecture.onion;
+package org.jddd.architecture.onion.classical;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -21,10 +21,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies the {@link DomainServiceRing} in an onion architecture. The domain service ring defines the interfaces
- * needed for e.g. storing and retrieving data, i.e. repository interfaces. However, it does not provide the technical
- * implementations. These will be provided by the {@link InfrastructureRing}. Thus, the domain service ring supports the
- * execution of business use cases.
+ * Identifies the {@link DomainModelRing} in an onion architecture. The domain model ring is the inner-most ring in the
+ * onion architecture and is only coupled to itself. It models the truth of the business domain by consisting of
+ * behaviour (logic) and the required state (data).
  *
  * @author Christian Stettler
  * @author Henning Schwendtner
@@ -36,5 +35,5 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
-public @interface DomainServiceRing {
+public @interface DomainModelRing {
 }

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jddd.architecture.onion;
+package org.jddd.architecture.onion.simplified;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -21,9 +21,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies the {@link InfrastructureRing} in an onion architecture. The infrastructure ring is the technical
- * implementation of the interfaces defined in the inner layers, such as JPA entities or concrete repository
- * implementations. It takes care of handling external requests and communication with other systems.
+ * Identifies the {@link DomainRing} in an onion architecture. The domain ring is the inner-most ring in the
+ * onion architecture and is only coupled to itself. It models the truth of the business domain by consisting of
+ * behaviour (logic) and the required state (data).
+ *
+ * Compared to the 4-ring onion architecture in which the domain is split into domain model and domain services, the
+ * 3-ring version combines those 2 rings so that it implements behavior (logic), state (data), and interfaces needed for
+ * e.g. storing and retrieving data, i.e. repository interfaces.
  *
  * @author Christian Stettler
  * @author Henning Schwendtner
@@ -35,5 +39,5 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
-public @interface InfrastructureRing {
+public @interface DomainRing {
 }
