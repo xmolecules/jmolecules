@@ -44,6 +44,13 @@
 			<organization>Pivotal Software, Inc.</organization>
 			<organizationUrl>https://pivotal.io</organizationUrl>
 		</developer>
+		<developer>
+			<id>hschwentner</id>
+			<name>Henning Schwentner</name>
+			<email>hs@wps.de</email>
+			<organization>WPS – Workplace Solutions GmbH</organization>
+			<organizationUrl>https://www.wps.de</organizationUrl>
+		</developer>
 	</developers>
 
 	<profiles>
