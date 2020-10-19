@@ -1,9 +1,35 @@
 = jMolecules - Architectural abstractions for Java
 
 This repository contains libraries to help developers work with architectural concepts in Java.
-It currently consists of the following artifacts:
+It currently consists of the following artifacts.
+These artifacts provide two purposes:
+
+* Make it easy for the human reader to determine what kind of architectural concepts a given class is.
+* Allow tool integration (to do interesting stuff like generating persistence or static architecture analysis to check for validations of the architectural rules.)
 
 == Artifacts to express DDD concepts
+When we take Ubiquitous Language serious, we want names (for classes, methods, etc.) that only contain words from the domain language.
+That means the titles of the building blocks should not be part of the names.
+So in a banking domain we don't want `BankAccountEntity`, `CurrencyVO` or even `AccountRepository` as types.
+Instead we want `BankAccount`, `Currency` and `Accounts`.
+Still we want to express that a given class (or other architectural element) is a special building block; i.e. uses a design pattern.
+jMolecules provide a set of standard annotations (and alternatively interfaces) for the building blocks known from DDD.
+
+Example:
+
+```java
+import org.jmolecules.ddd.annotation.*;
+
+@Entity
+public class BankAccount { /* ... */ }
+
+@ValueObject
+public class Currency { /* ... */ }
+
+@Repository
+public class Accounts { /* ... */ }
+```
+
 * link:jmolecules-ddd[`jmolecules-core`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
 * link:jmolecules-events[`jmolecules-events`] -- annotations and interfaces to express the concept of events in code.
 
@@ -32,6 +58,25 @@ It currently consists of the following artifacts:
 
 == Examples
 * link:jmolecules-examples[`jmolecules-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
+
+== Installation
+To use jMolecules in your project just install it from the Maven central repository.
+
+=== Maven
+
+```xml
+<dependency>
+  <groupId>org.jmolecules</groupId>
+  <artifactId>jmolecules-ddd</artifactId>
+  <version>0.1.0</version>
+</dependency>
+```
+
+=== Gradle
+
+```groovy
+compile("org.jmolecules:jmolecules-ddd:0.1.0")
+```
 
 == Release instructions
 
