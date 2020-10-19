@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * Therefore, the application layer is a thin layer to enable the system to execute business flows.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

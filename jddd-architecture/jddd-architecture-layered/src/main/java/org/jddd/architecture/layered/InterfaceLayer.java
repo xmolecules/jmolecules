@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
  * external requests either from users or other systems.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * lifecycle. Implementations should be immutable, operations on it are side-effect free.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

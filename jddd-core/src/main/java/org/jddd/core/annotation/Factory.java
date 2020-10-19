@@ -26,7 +26,7 @@ import java.lang.annotation.Target;
  * Aggregates in particular. Objects returned by the factory methods are guaranteed to be in valid state.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

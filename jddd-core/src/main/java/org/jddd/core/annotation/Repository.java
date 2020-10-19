@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
  * hand. However, they should make sure that no persistence mechanism specific APIs leak into client code.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

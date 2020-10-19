@@ -22,7 +22,7 @@ package org.jddd.core.types;
  * must define what it means to be the same thing.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

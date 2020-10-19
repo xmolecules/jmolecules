@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * (for example REST) must not be accessed by below layers.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

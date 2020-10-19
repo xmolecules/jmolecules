@@ -27,7 +27,7 @@ import java.lang.annotation.Target;
  * execution of business use cases.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

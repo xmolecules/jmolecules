@@ -25,7 +25,7 @@ package org.jddd.core.types;
  * only expect eventual consistency.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

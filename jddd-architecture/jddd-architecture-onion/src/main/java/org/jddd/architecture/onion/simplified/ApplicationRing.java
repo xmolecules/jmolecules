@@ -25,7 +25,7 @@ import java.lang.annotation.Target;
  * orchestrates business use case. To do so, it only depends on the inner rings, i.e. the {@link DomainRing}.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm

@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * becomes part of the ubiquitous language.
  *
  * @author Christian Stettler
- * @author Henning Schwendtner
+ * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
