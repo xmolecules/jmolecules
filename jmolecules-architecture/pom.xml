@@ -18,8 +18,8 @@
 	<description>Architectural Styles in Java</description>
 
 	<modules>
-		<module>jmolecules-architecture-layered</module>
-		<module>jmolecules-architecture-onion</module>
+		<module>jmolecules-layered-architecture</module>
+		<module>jmolecules-onion-architecture</module>
 	</modules>
 
 </project>

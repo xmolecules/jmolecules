@@ -11,7 +11,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>jmolecules-architecture-onion</artifactId>
+	<artifactId>jmolecules-onion-architecture</artifactId>
 
 	<name>jMolecules - Onion Architecture</name>
 	<description>Concepts of the onion architecture style.</description>

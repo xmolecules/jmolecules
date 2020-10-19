@@ -11,7 +11,7 @@
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>jmolecules-architecture-layered</artifactId>
+	<artifactId>jmolecules-layered-architecture</artifactId>
 
 	<name>jMolecules - Layered Architecure</name>
 	<description>Concepts of the layered architecture style.</description>
