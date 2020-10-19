@@ -11,7 +11,7 @@
 
 	<name>jDDD</name>
 	<description>Domain-Driven Design concepts in Java</description>
-	<url>https://github.com/odrotbohm/jddd</url>
+	<url>https://github.com/xmolecules/jmolecules</url>
 
 	<modules>
 		<module>jddd-core</module>
