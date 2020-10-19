@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jddd.core.annotation;
+package org.jmolecules.ddd.annotation;
 
-import java.lang.annotation.*;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * Identifies a DDD module.
@@ -29,9 +33,48 @@ import java.lang.annotation.*;
  *      Reference (Evans) - Bounded Contexts</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.PACKAGE)
-//TODO: with Java 9 or higher @Target(ElementType.MODULE)
+@Target({ ElementType.PACKAGE, ElementType.ANNOTATION_TYPE })
 @Documented
 public @interface Module {
 
+	/**
+	 * A stable identifier for the module. If not defined, an identifier will be derived from the annotated element,
+	 * usually a package. That allows tooling to derive name and description by applying some kind of convention to the
+	 * identifier.
+	 * <p>
+	 * Assuming a package {@code com.acme.myapp.module} annotated with {@code Module}, tooling could use a resource bundle
+	 * to lookup the keys {@code com.acme.myapp.module._name} and {@code com.acme.myapp.module_description} to resolve
+	 * name and description respectively.
+	 *
+	 * @return
+	 */
+	String id() default "";
+
+	/**
+	 * A human readable name for the module. Might be overridden by an external resolution mechanism via {@link #id()}.
+	 * Tooling should prevent both {@link #value()} and {@link #name()} from being configured at the same time. If in
+	 * doubt, the value defined in {@link #name()} will be preferred.
+	 *
+	 * @return
+	 * @see #id()
+	 */
+	String name() default "";
+
+	/**
+	 * An alias for {@link #name()}. Tooling should prevent both {@link #value()} and {@link #name()} from being
+	 * configured at the same time. If in doubt, the value defined in {@link #name()} will be preferred.
+	 *
+	 * @return
+	 * @see #name()
+	 */
+	String value() default "";
+
+	/**
+	 * A human readable description for the module. Might be overridden by an external resolution mechanism via
+	 * {@link #id()}.
+	 *
+	 * @return
+	 * @see #id()
+	 */
+	String description() default "";
 }
