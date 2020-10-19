@@ -4,22 +4,22 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.jddd</groupId>
-	<artifactId>jddd</artifactId>
+	<groupId>org.jmolecules</groupId>
+	<artifactId>jmolecules</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>jDDD</name>
-	<description>Domain-Driven Design concepts in Java</description>
+	<name>jMolecules</name>
+	<description>Architectural concepts in Java</description>
 	<url>https://github.com/xmolecules/jmolecules</url>
 
 	<modules>
-		<module>jddd-core</module>
-		<module>jddd-events</module>
-		<module>jddd-jpa</module>
-		<module>jddd-archunit</module>
-		<module>jddd-spring</module>
-		<module>jddd-architecture</module>
+		<module>jmolecules-core</module>
+		<module>jmolecules-events</module>
+		<module>jmolecules-jpa</module>
+		<module>jmolecules-archunit</module>
+		<module>jmolecules-spring</module>
+		<module>jmolecules-architecture</module>
 	</modules>
 
 	<properties>
@@ -55,7 +55,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
-				<module>jddd-examples</module>
+				<module>jmolecules-examples</module>
 			</modules>
 		</profile>
 		<profile>
@@ -183,9 +183,9 @@
 	</build>
 
 	<scm>
-		<url>https://github.com/odrotbohm/jddd</url>
-		<connection>scm:git:https://github.com/odrotbohm/jddd</connection>
-		<developerConnection>scm:git:ssh://git@github.com/odrotbohm/jddd.git</developerConnection>
+		<url>https://github.com/xmolecules/jmolecules</url>
+		<connection>scm:git:https://github.com/xmolecules/jmolecules</connection>
+		<developerConnection>scm:git:ssh://git@github.com/xmolecules/jmolecules.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 

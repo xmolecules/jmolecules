@@ -1,18 +1,18 @@
-= jDDD - Domain-Driven Design in Java
+= jMolecules - Architectural abstractions for Java
 
-This repository contains libraries to help developers work with DDD concepts in Java.
+This repository contains libraries to help developers work with architectural concepts in Java.
 It currently consists of the following artifacts:
 
 == Artifacts to express DDD concepts
-* link:jddd-core[`jddd-core`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
-* link:jddd-events[`jddd-events`] -- annotations and interfaces to express the concept of events in code.
-* link:jddd-architecture[`jddd-architecture`] -- annotations to express architectural styles in code.
-** link:jddd-architecture/jddd-architecture-layered[`jddd-architecture-layered`] -- Layered architecture
+* link:jmolecules-ddd[`jmolecules-core`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
+* link:jmolecules-events[`jmolecules-events`] -- annotations and interfaces to express the concept of events in code.
+* link:jmolecules-architecture[`jmolecules-architecture`] -- annotations to express architectural styles in code.
+** link:jmolecules-architecture/jmolecules-architecture-layered[`jmolecules-architecture-layered`] -- Layered architecture
 *** `@DomainLayer`
 *** `@ApplicationLayer`
 *** `@InfrastuctureLayer`
 *** `@InterfaceLayer`
-** link:jddd-architecture/jddd-architecture-onion[`jddd-architecture-onion`] -- Onion architecture
+** link:jmolecules-architecture/jmolecules-architecture-onion[`jmolecules-architecture-onion`] -- Onion architecture
 *** **Classic**
 **** `@DomainModelRing`
 **** `@DomainServiceRing`
@@ -24,12 +24,12 @@ It currently consists of the following artifacts:
 **** `@InfrastructureRing`
 
 == Technology integration
-* link:jddd-archunit[`jddd-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
-* link:jddd-jpa[`jddd-jpa`] -- A ByteBuddy plugin to derive default JPA mappings for code that expresses DDD building blocks via `jddd-core`.
-* link:jddd-jpa[`jddd-spring`] -- A ByteBuddy plugin to derive Spring component annotations for code that expresses DDD building blocks via `jddd-core`.
+* link:jmolecules-archunit[`jmolecules-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
+* link:jmolecules-jpa[`jmolecules-jpa`] -- A ByteBuddy plugin to derive default JPA mappings for code that expresses DDD building blocks via `jmolecules-core`.
+* link:jmolecules-jpa[`jmolecules-spring`] -- A ByteBuddy plugin to derive Spring component annotations for code that expresses DDD building blocks via `jmolecules-core`.
 
 == Examples
-* link:jddd-examples[`jddd-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
+* link:jmolecules-examples[`jmolecules-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
 
 == Release instructions
 
