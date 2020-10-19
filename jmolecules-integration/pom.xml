@@ -1,5 +1,4 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -8,17 +7,14 @@
 		<version>0.2.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>jmolecules-core</artifactId>
+	<packaging>pom</packaging>
+	<artifactId>jmolecules-integration</artifactId>
+	<name>jMolecules - Integration</name>
 
-	<name>jMolecules - Core</name>
-
-	<dependencies>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
+	<modules>
+		<module>jmolecules-archunit</module>
+		<module>jmolecules-jpa</module>
+		<module>jmolecules-spring</module>
+	</modules>
 
 </project>

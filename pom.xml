@@ -14,12 +14,10 @@
 	<url>https://github.com/xmolecules/jmolecules</url>
 
 	<modules>
-		<module>jmolecules-core</module>
+		<module>jmolecules-ddd</module>
 		<module>jmolecules-events</module>
-		<module>jmolecules-jpa</module>
-		<module>jmolecules-archunit</module>
-		<module>jmolecules-spring</module>
 		<module>jmolecules-architecture</module>
+		<module>jmolecules-integration</module>
 	</modules>
 
 	<properties>

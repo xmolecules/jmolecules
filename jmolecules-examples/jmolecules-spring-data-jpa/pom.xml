@@ -36,7 +36,7 @@
 
 		<dependency>
 			<groupId>${project.groupId}</groupId>
-			<artifactId>jmolecules-core</artifactId>
+			<artifactId>jmolecules-ddd</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
