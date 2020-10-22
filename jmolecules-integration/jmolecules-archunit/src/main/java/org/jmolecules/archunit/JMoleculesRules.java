@@ -49,7 +49,7 @@ import com.tngtech.archunit.lang.syntax.ArchRuleDefinition;
  * @author Oliver Drotbohm
  * @see http://scabl.blogspot.com/2015/04/aeddd-9.html
  */
-public class JDddRules {
+public class JMoleculesRules {
 
 	/**
 	 * An {@link ArchRule} that's composed of all other rules declared in this class.

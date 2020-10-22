@@ -34,17 +34,17 @@ import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.EvaluationResult;
 
 /**
- * Unit tests for JDddRules.
+ * Unit tests for JMoleculesRules.
  *
  * @author Oliver Drotbohm
  */
 @AnalyzeClasses(packages = "org.jmolecules")
-class JDddRulesUnitTest {
+class JMoleculesRulesUnitTest {
 
 	@ArchTest
 	void detectsViolations(JavaClasses classes) {
 
-		EvaluationResult result = JDddRules.all().evaluate(classes);
+		EvaluationResult result = JMoleculesRules.all().evaluate(classes);
 
 		List<String> invalidProperties = Arrays.asList("invalid", //
 				"invalidInCollection", //
