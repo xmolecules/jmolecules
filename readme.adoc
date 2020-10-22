@@ -81,4 +81,4 @@ compile("org.jmolecules:jmolecules-ddd:0.1.0")
 == Release instructions
 
 * `mvn release:prepare -DscmReleaseCommitComment="$ticketId - Release version $version." -DscmDevelopmentCommitComment="$ticketId - Prepare next development iteration."`
-* `mvn release:perform`
+* `mvn release:perform -Dgpg.keyname=$keyname`

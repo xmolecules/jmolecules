@@ -40,9 +40,9 @@
 		<developer>
 			<id>odrotbohm</id>
 			<name>Oliver Drotbohm</name>
-			<email>odrotbohm@pivotal.io</email>
-			<organization>Pivotal Software, Inc.</organization>
-			<organizationUrl>https://pivotal.io</organizationUrl>
+			<email>odrotbohm@vmware.com</email>
+			<organization>VMware Inc.</organization>
+			<organizationUrl>https://vmware.com</organizationUrl>
 		</developer>
 		<developer>
 			<id>hschwentner</id>
@@ -50,6 +50,13 @@
 			<email>hs@wps.de</email>
 			<organization>WPS – Workplace Solutions GmbH</organization>
 			<organizationUrl>https://www.wps.de</organizationUrl>
+		</developer>
+		<developer>
+			<id>spirnbaum</id>
+			<name>Stephan Pirnbaum</name>
+			<email>stephan.pirnbaum@buschmais.com</email>
+			<organization>buschmais GbR</organization>
+			<organizationUrl>https://www.buschmais.de</organizationUrl>
 		</developer>
 	</developers>
 

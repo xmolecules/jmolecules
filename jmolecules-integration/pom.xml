@@ -13,8 +13,26 @@
 
 	<modules>
 		<module>jmolecules-archunit</module>
-		<module>jmolecules-jpa</module>
-		<module>jmolecules-spring</module>
 	</modules>
+
+	<profiles>
+
+		<profile>
+			<id>default</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<modules>
+				<module>jmolecules-jpa</module>
+				<module>jmolecules-spring</module>
+			</modules>
+		</profile>
+
+		<!-- Needs to be declared explicitly to deactivate the default profile -->
+		<profile>
+			<id>sonatype</id>
+		</profile>
+
+	</profiles>
 
 </project>
