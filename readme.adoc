@@ -1,23 +1,17 @@
-= jMolecules - Architectural abstractions for Java
+= jMolecules – Architectural abstractions for Java
 
-This repository contains libraries to help developers work with architectural concepts in Java.
-It currently consists of the following artifacts.
-These artifacts provide two purposes:
+A set of libraries to help developers work with architectural concepts in Java.
+Goals:
 
-* Make it easy for the human reader to determine what kind of architectural concepts a given class is.
+* Express that a piece of code (package, class, method...) implements an architectural concept.
+* Make it easy for the human reader to determine what kind of architectural concepts a given piece of code is.
 * Allow tool integration (to do interesting stuff like generating persistence or static architecture analysis to check for validations of the architectural rules.)
 
-== Artifacts to express DDD concepts
-When we take Ubiquitous Language serious, we want names (for classes, methods, etc.) that only contain words from the domain language.
-That means the titles of the building blocks should not be part of the names.
-So in a banking domain we don't want `BankAccountEntity`, `CurrencyVO` or even `AccountRepository` as types.
-Instead we want `BankAccount`, `Currency` and `Accounts`.
-Still we want to express that a given class (or other architectural element) is a special building block; i.e. uses a design pattern.
-jMolecules provide a set of standard annotations (and alternatively interfaces) for the building blocks known from DDD.
-
+== Expressing DDD concepts
 Example:
 
-```java
+[source,java]
+----
 import org.jmolecules.ddd.annotation.*;
 
 @Entity
@@ -28,17 +22,58 @@ public class Currency { /* ... */ }
 
 @Repository
 public class Accounts { /* ... */ }
-```
+----
 
+When we take Ubiquitous Language serious, we want names (for classes, methods, etc.) that only contain words from the domain language.
+That means the titles of the building blocks should not be part of the names.
+So in a banking domain we don't want `BankAccountEntity`, `CurrencyVO` or even `AccountRepository` as types.
+Instead, we want `BankAccount`, `Currency` and `Accounts` – like in the example above.
+
+Still, we want to express that a given class (or other architectural element) is a special building block; i.e. uses a design pattern.
+jMolecules provide a set of standard annotations (and alternatively marker interfaces) for the building blocks known from DDD.
+
+=== Libraries
 * link:jmolecules-ddd[`jmolecules-ddd`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
 * link:jmolecules-events[`jmolecules-events`] -- annotations and interfaces to express the concept of events in code.
 
-== Artifacts to express architectures
+== Expressing architecture
+jMolecules provides annotations to mark a package as a layer (or ring):
+
+[source,java]
+----
+import org.jmolecules.architecture.layered.*;
+
+@DomainLayer
+package org.acmebank.domain;
+
+@ApplicationLayer
+package org.acmebank.application;
+----
+That way, all classes in the respective package are considered to be part of the annotated layer.
+
+Alternatively, classes can be annotated directly:
+
+[source,java]
+----
+import org.jmolecules.architecture.layered.*;
+
+@DomainLayer
+@Entity
+public class BankAccount { /* ... */ }
+
+@ApplicationLayer
+@Service
+public class TransferMoney { /* ... */ }
+----
+
+Currently, annotations for Layered and Onion Architecture exist.
+
+=== Libraries
 * link:jmolecules-architecture[`jmolecules-architecture`] -- annotations to express architectural styles in code.
 ** link:jmolecules-architecture/jmolecules-architecture-layered[`jmolecules-architecture-layered`] -- Layered architecture
 *** `@DomainLayer`
 *** `@ApplicationLayer`
-*** `@InfrastuctureLayer`
+*** `@InfrastructureLayer`
 *** `@InterfaceLayer`
 ** link:jmolecules-architecture/jmolecules-architecture-onion[`jmolecules-architecture-onion`] -- Onion architecture
 *** **Classic**
@@ -64,19 +99,21 @@ To use jMolecules in your project just install it from the Maven central reposit
 
 === Maven
 
-```xml
+[source,xml]
+----
 <dependency>
   <groupId>org.jmolecules</groupId>
   <artifactId>jmolecules-ddd</artifactId>
   <version>0.1.0</version>
 </dependency>
-```
+----
 
 === Gradle
 
-```groovy
+[source,groovy]
+----
 compile("org.jmolecules:jmolecules-ddd:0.1.0")
-```
+----
 
 == Release instructions
 

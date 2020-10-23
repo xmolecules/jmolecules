@@ -41,7 +41,7 @@ import com.tngtech.archunit.lang.syntax.ArchRuleDefinition;
  * A set of ArchUnit rules that allow verification of domain models. In short the rules here verify:
  * <ul>
  * <li>Aggregates only refer to entities that are declared to be part of it.</li>
- * <li>References to other aggregates are established via {@link Association}s or idetifier references.</li>
+ * <li>References to other aggregates are established via {@link Association}s or identifier references.</li>
  * </ul>
  * Those rules are mostly driven by what's been presented by John Sullivan in his blog post
  * <a href="http://scabl.blogspot.com/2015/04/aeddd-9.html">here</a>.

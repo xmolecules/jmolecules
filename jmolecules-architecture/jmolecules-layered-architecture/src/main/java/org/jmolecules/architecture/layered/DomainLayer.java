@@ -22,7 +22,7 @@ import java.lang.annotation.Target;
 
 /**
  * Identifies the {@link DomainLayer} in a layered architecture. The domain layer is "the heart of business software".
- * It's responsible for representing business concepts including the domain model and the business rules and maneges the
+ * It's responsible for representing business concepts including the domain model and the business rules and manages the
  * business state.
  *
  * @author Christian Stettler
