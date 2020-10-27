@@ -16,8 +16,11 @@
 package org.jmolecules.ddd.types;
 
 /**
+ * Marker interface for identifiers. Exists primarily to easily identify types that are supposed to be identifiers
+ * within the code base and let the compiler verify the correctness of declared relationships.
  *
  * @author Oliver Drotbohm
+ * @see Identifiable
  */
 public interface Identifier {
 
