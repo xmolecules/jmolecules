@@ -15,4 +15,16 @@
  */
 package org.jmolecules.ddd.types;
 
+/**
+ * An association to an {@link AggregateRoot}.
+ *
+ * @author Christian Stettler
+ * @author Henning Schwentner
+ * @author Stephan Pirnbaum
+ * @author Martin Schimak
+ * @author John Sullivan
+ * @author Oliver Drotbohm
+ * @see <a href="https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating
+ *      the Aggregate</a>
+ */
 public interface Association<T extends AggregateRoot<T, ID>, ID extends Identifier> extends Identifiable<ID> {}

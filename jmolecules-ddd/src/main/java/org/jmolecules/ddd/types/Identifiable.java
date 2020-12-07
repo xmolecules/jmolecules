@@ -16,8 +16,16 @@
 package org.jmolecules.ddd.types;
 
 /**
+ * An identifiable type, i.e. anything that exposes an {@link Identifier}.
+ *
  * @author Oliver Drotbohm
  */
 public interface Identifiable<ID> {
+
+	/**
+	 * Returns the identifier.
+	 *
+	 * @return
+	 */
 	ID getId();
 }
