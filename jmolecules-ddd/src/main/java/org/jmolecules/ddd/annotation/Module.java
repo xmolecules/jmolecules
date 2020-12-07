@@ -30,7 +30,7 @@ import java.lang.annotation.Target;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Bounded Contexts</a>
+ *      Reference (Evans) - Modules</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.ANNOTATION_TYPE })
