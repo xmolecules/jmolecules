@@ -17,7 +17,7 @@ import org.jmolecules.ddd.annotation.Service;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-public class JDddSpringPlugin extends NoOp {
+public class JMoleculesSpringPlugin extends NoOp {
 
 	private static Set<Class<?>> ANNOTATIONS = new HashSet<>(
 			Arrays.asList(Service.class, Repository.class, Factory.class));
@@ -56,7 +56,7 @@ public class JDddSpringPlugin extends NoOp {
 			return builder;
 		}
 
-		log.info("jDDD Spring Plugin - Annotating {} with {}.", type.getName(), annotation.getName());
+		log.info("jMolecules Spring Plugin - Annotating {} with {}.", type.getName(), annotation.getName());
 
 		return builder.annotateType(getAnnotation(annotation));
 	}

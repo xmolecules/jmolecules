@@ -21,7 +21,7 @@ import org.jmolecules.ddd.types.Entity;
 import org.jmolecules.ddd.types.Identifier;
 
 @Slf4j
-public class JDddJpaPlugin extends NoOp {
+public class JMoleculesJpaPlugin extends NoOp {
 
 	@Override
 	public boolean matches(TypeDescription target) {
@@ -54,7 +54,7 @@ public class JDddJpaPlugin extends NoOp {
 
 		if (!type.isAssignableTo(Serializable.class)) {
 
-			log.info("jDDD JPA Plugin - Adding Serializable to {}.", type.getName());
+			log.info("jMolecules JPA Plugin - Adding Serializable to {}.", type.getName());
 
 			builder = builder.implement(Serializable.class);
 		}
@@ -84,7 +84,7 @@ public class JDddJpaPlugin extends NoOp {
 			return builder;
 		}
 
-		log.info("jDDD JPA Plugin - Annotating {} with {}.", type.getName(), annotation.getName());
+		log.info("jMolecules JPA Plugin - Annotating {} with {}.", type.getName(), annotation.getName());
 
 		return builder.annotateType(getAnnotation(annotation));
 	}
