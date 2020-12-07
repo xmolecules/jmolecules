@@ -15,17 +15,14 @@
  */
 package org.jmolecules.examples.jpa.order;
 
-import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
 import java.util.List;
 import java.util.UUID;
 
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.jmolecules.ddd.types.AggregateRoot;
@@ -39,12 +36,11 @@ import org.jmolecules.examples.jpa.customer.Customer.CustomerAssociation;
 @Table(name = "SAMPLE_ORDER")
 @Getter
 @RequiredArgsConstructor
-@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Order implements AggregateRoot<Order, Order.OrderId> {
 
 	private final @EqualsAndHashCode.Include OrderId id;
-	private @OneToMany List<LineItem> lineItems;
+	private List<LineItem> lineItems;
 	private CustomerAssociation customer;
 
 	public Order(Customer customer) {
@@ -55,7 +51,6 @@ public class Order implements AggregateRoot<Order, Order.OrderId> {
 
 	@Value
 	@RequiredArgsConstructor(staticName = "of")
-	@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 	public static class OrderId implements Identifier {
 
 		private final UUID orderId;

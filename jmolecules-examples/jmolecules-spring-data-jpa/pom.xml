@@ -41,6 +41,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>jmolecules-jpa</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
@@ -50,20 +56,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>jmolecules-jpa</artifactId>
-			<version>${project.version}</version>
-			<optional>true</optional>
-		</dependency>
-
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>jmolecules-spring</artifactId>
-			<version>${project.version}</version>
-			<optional>true</optional>
 		</dependency>
 
 		<dependency>
@@ -93,13 +85,28 @@
 						</goals>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>${project.groupId}</groupId>
+						<artifactId>jmolecules-jpa-plugin</artifactId>
+						<version>${project.version}</version>
+						<optional>true</optional>
+					</dependency>
+
+					<dependency>
+						<groupId>${project.groupId}</groupId>
+						<artifactId>jmolecules-spring</artifactId>
+						<version>${project.version}</version>
+						<optional>true</optional>
+					</dependency>
+				</dependencies>
 				<configuration>
 					<transformations>
 						<transformation>
 							<plugin>org.jmolecules.spring.JMoleculesSpringPlugin</plugin>
 						</transformation>
 						<transformation>
-							<plugin>org.jmolecules.jpa.JMoleculesJpaPlugin</plugin>
+							<plugin>org.jmolecules.jpa.plugin.JMoleculesJpaPlugin</plugin>
 						</transformation>
 					</transformations>
 				</configuration>
@@ -109,8 +116,8 @@
 
 	<repositories>
 		<repository>
-			<id>spring-libs-snapshot</id>
-			<url>https://repo.spring.io/libs-snapshot</url>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/snapshot</url>
 		</repository>
 	</repositories>
 

@@ -15,16 +15,12 @@
  */
 package org.jmolecules.examples.jpa.customer;
 
-import lombok.AccessLevel;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
 
 import java.util.List;
 import java.util.UUID;
-
-import javax.persistence.OneToMany;
 
 import org.jmolecules.ddd.types.AggregateRoot;
 import org.jmolecules.ddd.types.Association;
@@ -34,13 +30,12 @@ import org.jmolecules.examples.jpa.customer.Customer.CustomerId;
 /**
  * @author Oliver Drotbohm
  */
-@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 @Getter
 public class Customer implements AggregateRoot<Customer, CustomerId> {
 
 	private final CustomerId id;
 	private String firstname, lastname;
-	private @OneToMany List<Address> addresses;
+	private List<Address> addresses;
 
 	public Customer(String firstname, String lastname) {
 
@@ -50,14 +45,12 @@ public class Customer implements AggregateRoot<Customer, CustomerId> {
 	}
 
 	@Value
-	@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 	@RequiredArgsConstructor(staticName = "of")
 	public static class CustomerId implements Identifier {
 		private final UUID id;
 	}
 
 	@Getter
-	@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 	public static class CustomerAssociation implements Association<Customer, CustomerId> {
 
 		private CustomerId id;
@@ -66,5 +59,4 @@ public class Customer implements AggregateRoot<Customer, CustomerId> {
 			this.id = customer.getId();
 		}
 	}
-
 }
