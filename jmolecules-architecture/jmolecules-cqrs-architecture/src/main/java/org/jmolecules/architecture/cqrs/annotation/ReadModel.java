@@ -13,27 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.event.annotation;
+package org.jmolecules.architecture.cqrs.annotation;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.
- * It allows making the events that the domain experts want to track or be notified of explicit, or which are associated
- * with state change in the other model objects.
+ * Identifies a read model element in the context of CQRS, i.e. a (persistent) object optimized for read-access and only
+ * only on the Q(uery) part of the architecture. The read model represents the current state or rather materialized view
+ * after replaying the events for a single entity.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
- * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Domain Events</a>
+ * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young</a>
  */
-public @interface DomainEvent {
-
-    /**
-     * An identifier for the type of this event. This information may be used by external tools 
-     * to create a linkage between the event and the consumer.
-     */    
-    String type() default "";
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Documented
+public @interface ReadModel {
 
 }

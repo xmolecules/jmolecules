@@ -16,24 +16,21 @@
 package org.jmolecules.event.annotation;
 
 /**
- * A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.
- * It allows making the events that the domain experts want to track or be notified of explicit, or which are associated
- * with state change in the other model objects.
+ * Identifies a domain event handler, i.e. logic to process a {@link DomainEvent}.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
- * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Domain Events</a>
  */
-public @interface DomainEvent {
+public @interface DomainEventHandler {
 
     /**
-     * An identifier for the type of this event. This information may be used by external tools 
-     * to create a linkage between the event and the consumer.
-     */    
-    String type() default "";
+     * Optional identification of the domain event handled by this handler.
+     * This information may be used for easier linkage between event and handler
+     * by external tools and refers to the type of the domain event.
+     */
+    String handles() default "";
 
 }
