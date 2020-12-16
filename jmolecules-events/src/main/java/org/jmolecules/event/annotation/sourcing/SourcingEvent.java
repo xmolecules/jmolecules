@@ -15,6 +15,12 @@
  */
 package org.jmolecules.event.annotation.sourcing;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * A sourcing event marks the change of the domain model within one transaction.
  * Thus, it only contains a unique identifier of the changed entity as well as the diff to
@@ -26,5 +32,8 @@ package org.jmolecules.event.annotation.sourcing;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Documented
 public @interface SourcingEvent {
 }

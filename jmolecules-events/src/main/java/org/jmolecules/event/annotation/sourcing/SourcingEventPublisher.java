@@ -15,6 +15,12 @@
  */
 package org.jmolecules.event.annotation.sourcing;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * Identifies a sourcing event publisher, i.e. logic to publish aic to process a {@link SourcingEvent}.
  *
@@ -24,5 +30,8 @@ package org.jmolecules.event.annotation.sourcing;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Documented
 public @interface SourcingEventPublisher {
 }

@@ -15,6 +15,12 @@
  */
 package org.jmolecules.event.annotation;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * Identifies a domain event publisher, i.e. logic to publish a {@link DomainEvent}.
  *
@@ -24,6 +30,9 @@ package org.jmolecules.event.annotation;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Documented
 public @interface DomainEventPublisher {
 
     /**
