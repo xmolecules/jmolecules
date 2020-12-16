@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.event.annotation;
+package org.jmolecules.architecture.cqrs.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,37 +22,34 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.
- * It allows making the events that the domain experts want to track or be notified of explicit, or which are associated
- * with state change in the other model objects.
+ * Identifies a command in the context of CQRS, i.e. a request to the system for the change of data. Commands are always
+ * in imperative tense and thus, unlike an event, do not state that something has already happened, but something is
+ * requested to happen. With that, the {@link CommandHandler} which is processing the command has the option reject the
+ * command.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
- * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Domain Events</a>
+ * @since 1.1
+ * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young - Commands</a>
  */
+@Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Documented
-public @interface DomainEvent {
+public @interface Command {
 
 	/**
-	 * An identifier for the namespace of the event to group multiple events and let clients express their interest in all
-	 * events of a specific namespace. If not set, external tooling may default this to the fully-qualified package name
-	 * of the annotated type.
-	 *
-	 * @since 1.1
+	 * An identifier for the namespace of the command to group multiple commands and let clients express their interest in
+	 * all commands of a specific namespace. If not set, external tooling may default this to the fully-qualified package
+	 * name of the annotated type.
 	 */
 	String namespace() default "";
 
 	/**
-	 * An identifier for the name of the event used to abstract away from the type system and to guard against
+	 * An identifier for the name of the command used to abstract away from the type system and to guard against
 	 * refactorings. If not set, external tooling may default this to the simple class name of the annotated type.
-	 *
-	 * @since 1.1
 	 */
 	String name() default "";
 }

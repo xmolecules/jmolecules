@@ -16,6 +16,7 @@
 	<description>Architectural Styles in Java</description>
 
 	<modules>
+		<module>jmolecules-cqrs-architecture</module>
 		<module>jmolecules-layered-architecture</module>
 		<module>jmolecules-onion-architecture</module>
 	</modules>
