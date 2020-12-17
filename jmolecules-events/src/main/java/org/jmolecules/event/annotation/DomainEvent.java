@@ -15,6 +15,12 @@
  */
 package org.jmolecules.event.annotation;
 
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 /**
  * A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.
  * It allows making the events that the domain experts want to track or be notified of explicit, or which are associated
@@ -28,6 +34,9 @@ package org.jmolecules.event.annotation;
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
  *      Reference (Evans) - Domain Events</a>
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.TYPE)
+@Documented
 public @interface DomainEvent {
 
     /**

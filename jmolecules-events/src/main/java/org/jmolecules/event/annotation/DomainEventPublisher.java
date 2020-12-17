@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * @author Oliver Drotbohm
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Documented
 public @interface DomainEventPublisher {
 
