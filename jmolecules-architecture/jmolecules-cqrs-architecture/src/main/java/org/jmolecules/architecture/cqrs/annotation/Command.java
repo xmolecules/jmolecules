@@ -39,9 +39,16 @@ import java.lang.annotation.Target;
 public @interface Command {
 
     /**
-     * An identifier for the type of this command. This information may be used by external tools
-     * to create a linkage between the command and the consumer.
+     * An identifier for the namespace of the command to group multiple commands and let clients express their interest
+     * in all commands of a specific namespace. If not set, external tooling may default this to the fully qualified
+     * package name.
      */
-    String type() default "";
+    String namespace() default "";
+
+    /**
+     * An identifier for the name of the command used to abstract away from the type system and to guard against
+     * refactorings. If not set, external tooling may default this to the simple class name.
+     */
+    String name() default "";
 
 }

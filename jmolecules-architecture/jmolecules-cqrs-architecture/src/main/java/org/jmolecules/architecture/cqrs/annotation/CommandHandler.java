@@ -41,7 +41,8 @@ public @interface CommandHandler {
     /**
      * Optional identification of the command handled by this handler.
      * This information may be used for easier linkage between command and handler
-     * by external tools and refers to the type of the command.
+     * by external tools and refers to the type of the command. When leaving the default value,
+     * it is assumed that the method signature makes clear what event is consumer.
      */
     String handles() default "";
 

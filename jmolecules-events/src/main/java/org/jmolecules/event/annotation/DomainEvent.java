@@ -40,9 +40,16 @@ import java.lang.annotation.Target;
 public @interface DomainEvent {
 
     /**
-     * An identifier for the type of this event. This information may be used by external tools 
-     * to create a linkage between the event and the consumer.
-     */    
-    String type() default "";
+     * An identifier for the namespace of the event to group multiple events and let clients express their interest
+     * in all events of a specific namespace. If not set, external tooling may default this to the fully qualified
+     * package name.
+     */
+    String namespace() default "";
+
+    /**
+     * An identifier for the name of the event used to abstract away from the type system and to guard against
+     * refactorings. If not set, external tooling may default this to the simple class name.
+     */
+    String name() default "";
 
 }

@@ -38,7 +38,8 @@ public @interface DomainEventHandler {
     /**
      * Optional identification of the domain event handled by this handler.
      * This information may be used for easier linkage between event and handler
-     * by external tools and refers to the type of the domain event.
+     * by external tools and refers to the type of the domain event. When leaving the default value,
+     * it is assumed that the method signature makes clear what event is consumer.
      */
     String handles() default "";
 
