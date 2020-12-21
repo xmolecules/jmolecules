@@ -38,7 +38,8 @@ public @interface DomainEventPublisher {
     /**
      * Optional identification of the domain event published by this publisher.
      * This information may be used for easier linkage between event and publisher
-     * by external tools and refers to the type of the domain event.
+     * by external tools and refers to the combination of {@link DomainEvent#namespace()} and
+     * {@link DomainEvent#name()}, separated by '.' (dot)
      */
     String publishes() default "";
 

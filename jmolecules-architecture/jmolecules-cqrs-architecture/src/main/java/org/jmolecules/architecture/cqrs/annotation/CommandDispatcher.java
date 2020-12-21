@@ -39,7 +39,8 @@ public @interface CommandDispatcher {
     /**
      * Optional identification of the command published by this publisher.
      * This information may be used for easier linkage between command and publisher
-     * by external tools and refers to the type of the command.
+     * by external tools and refers to the combination of {@link Command#namespace()} and
+     * {@link Command#name()}, separated by '.' (dot).
      */
     String publishes() default "";
 
