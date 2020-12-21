@@ -31,16 +31,33 @@ import java.lang.annotation.Target;
  * @author Oliver Drotbohm
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Documented
 public @interface DomainEventHandler {
 
     /**
-     * Optional identification of the domain event handled by this handler.
+     * Optional identification of the namespace of the domain event handled by this handler.
      * This information may be used for easier linkage between event and handler
-     * by external tools and refers to the type of the domain event. When leaving the default value,
-     * it is assumed that the method signature makes clear what event is consumer.
+     * by external tools and refers to {@link DomainEvent#namespace()}. When leaving the default value,
+     * it is assumed that the method signature makes clear what event is consumed.
+     *
+     * If the handler takes care of all events of a specific namespace, the value of this field needs to
+     * be set to the respective namespace and the {@link DomainEventHandler#handlesName()} needs to
+     * be set accordingly.
+     *
+     * If the handler doesn't care about the namespace, the value may be set to the '*' (asterisk) placeholder.
      */
-    String handles() default "";
+    String handlesNamespace() default "";
+
+    /**
+     * Optional identification of the name of the domain event handled by this handler.
+     * This information may be used for easier linkage between event and handler
+     * by external tools and refers to {@link DomainEvent#name()}. When leaving the default value,
+     * it is assumed that the method signature makes clear what event is consumed.
+     *
+     * If the handler takes care of all events of a specific namespace, the value of this field needs to
+     * be set to the '*' asterisk placeholder.
+     */
+    String handlesName() default "";
 
 }

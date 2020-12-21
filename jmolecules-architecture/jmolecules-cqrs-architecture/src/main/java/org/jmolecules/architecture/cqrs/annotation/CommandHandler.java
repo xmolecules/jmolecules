@@ -34,16 +34,33 @@ import java.lang.annotation.Target;
  * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young - Commands</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Documented
 public @interface CommandHandler {
 
     /**
-     * Optional identification of the command handled by this handler.
+     * Optional identification of the namespace of the command handled by this handler.
      * This information may be used for easier linkage between command and handler
-     * by external tools and refers to the type of the command. When leaving the default value,
-     * it is assumed that the method signature makes clear what event is consumer.
+     * by external tools and refers to {@link Command#namespace()}. When leaving the default value,
+     * it is assumed that the method signature makes clear what command is consumed.
+     *
+     * If the handler takes care of all commands of a specific namespace, the value of this field needs to
+     * be set to the respective namespace and the {@link CommandHandler#handlesEventName()} needs to
+     * be set accordingly.
+     *
+     * If the handler doesn't care about the namespace, the value may be set to the '*' (asterisk) placeholder.
      */
-    String handles() default "";
+    String handlesNamespace() default "";
+
+    /**
+     * Optional identification of the name of the command handled by this handler.
+     * This information may be used for easier linkage between command and handler
+     * by external tools and refers to {@link Command#name()}. When leaving the default value,
+     * it is assumed that the method signature makes clear what event is consumed.
+     *
+     * If the handler takes care of all commands of a specific namespace, the value of this field needs to
+     * be set to the '*' (asterisk) placeholder.
+     */
+    String handlesEventName() default "";
 
 }

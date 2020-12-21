@@ -31,7 +31,7 @@ import java.lang.annotation.Target;
  * @author Oliver Drotbohm
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
+@Target({ElementType.METHOD, ElementType.ANNOTATION_TYPE})
 @Documented
 public @interface DomainEventPublisher {
 
@@ -41,5 +41,17 @@ public @interface DomainEventPublisher {
      * by external tools and refers to the type of the domain event.
      */
     String publishes() default "";
+
+    /**
+     * Marks the type of the publisher, i.e. if the publisher externalizes events or
+     * if it creates events for VM internal consumption such as application events.
+     */
+    PublisherType type() default PublisherType.UNKNOWN;
+
+    enum PublisherType {
+        INTERNAL,
+        EXTERNAL,
+        UNKNOWN
+    }
 
 }
