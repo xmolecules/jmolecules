@@ -58,6 +58,13 @@
 		</developer>
 	</developers>
 
+        <contributors>
+		<contributor>
+			<name>Sascha Kohlmann</name>
+			<email>sascha.kohlmann@gmail.com</email>
+		</contributor>
+	</contributors>
+
 	<profiles>
 		<profile>
 			<id>default</id>
