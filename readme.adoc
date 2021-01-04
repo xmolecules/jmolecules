@@ -70,12 +70,12 @@ Currently, annotations for Layered and Onion Architecture exist.
 
 === Libraries
 * link:jmolecules-architecture[`jmolecules-architecture`] -- annotations to express architectural styles in code.
-** link:jmolecules-architecture/jmolecules-architecture-layered[`jmolecules-architecture-layered`] -- Layered architecture
+** link:jmolecules-architecture/jmolecules-layered-architecture[`jmolecules-layered-architecture`] -- Layered architecture
 *** `@DomainLayer`
 *** `@ApplicationLayer`
 *** `@InfrastructureLayer`
 *** `@InterfaceLayer`
-** link:jmolecules-architecture/jmolecules-architecture-onion[`jmolecules-architecture-onion`] -- Onion architecture
+** link:jmolecules-architecture/jmolecules-onion-architecture[`jmolecules-onion-architecture`] -- Onion architecture
 *** **Classic**
 **** `@DomainModelRing`
 **** `@DomainServiceRing`
