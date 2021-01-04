@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies a command dispatcher in the context of CQRS, i.e. logic to publish a {@link Command}.
+ * Identifies a command dispatcher in the context of CQRS, i.e. logic to dispatch a {@link Command}.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
@@ -37,11 +37,11 @@ import java.lang.annotation.Target;
 public @interface CommandDispatcher {
 
     /**
-     * Optional identification of the command published by this publisher.
-     * This information may be used for easier linkage between command and publisher
+     * Optional identification of the command dispatched by this dispatcher.
+     * This information may be used for easier linkage between command and dispatcher
      * by external tools and refers to the combination of {@link Command#namespace()} and
      * {@link Command#name()}, separated by '.' (dot).
      */
-    String publishes() default "";
+    String dispatches() default "";
 
 }

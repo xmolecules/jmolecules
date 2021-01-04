@@ -45,7 +45,7 @@ public @interface CommandHandler {
      * it is assumed that the method signature makes clear what command is consumed.
      *
      * If the handler takes care of all commands of a specific namespace, the value of this field needs to
-     * be set to the respective namespace and the {@link CommandHandler#handlesEventName()} needs to
+     * be set to the respective namespace and the {@link CommandHandler#handlesCommandName()} ()} needs to
      * be set accordingly.
      *
      * If the handler doesn't care about the namespace, the value may be set to the '*' (asterisk) placeholder.
@@ -56,11 +56,11 @@ public @interface CommandHandler {
      * Optional identification of the name of the command handled by this handler.
      * This information may be used for easier linkage between command and handler
      * by external tools and refers to {@link Command#name()}. When leaving the default value,
-     * it is assumed that the method signature makes clear what event is consumed.
+     * it is assumed that the method signature makes clear what command is consumed.
      *
      * If the handler takes care of all commands of a specific namespace, the value of this field needs to
      * be set to the '*' (asterisk) placeholder.
      */
-    String handlesEventName() default "";
+    String handlesCommandName() default "";
 
 }
