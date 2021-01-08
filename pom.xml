@@ -114,6 +114,9 @@
 	</profiles>
 
 	<build>
+
+		<defaultGoal>verify</defaultGoal>
+
 		<plugins>
 
 			<plugin>
