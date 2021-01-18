@@ -13,30 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.examples.jpa.customer;
+package org.jmolecules.bytebuddy;
 
-import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import net.bytebuddy.dynamic.ClassFileLocator;
 
-import java.time.LocalDate;
+import java.io.IOException;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+@RequiredArgsConstructor(staticName = "of")
+class ClassWorld {
 
-import org.jmolecules.ddd.types.Entity;
+	private final ClassFileLocator locator;
 
-/**
- * @author Oliver Drotbohm
- */
-@Getter
-public class SomeEntity implements Entity<Customer, Long> {
+	boolean isAvailable(String name) {
 
-	private @Id @GeneratedValue Long id;
-	private final LocalDate date;
-	private String firstname;
-
-	public SomeEntity(String firstname) {
-
-		this.firstname = firstname;
-		this.date = null;
+		try {
+			return locator.locate(name).isResolved();
+		} catch (IOException o_O) {
+			return false;
+		}
 	}
 }

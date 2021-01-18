@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.jpa.plugin;
+package org.jmolecules.bytebuddy;
 
 import static net.bytebuddy.matcher.ElementMatchers.*;
 
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.build.Plugin.NoOp;
+import net.bytebuddy.build.Plugin;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.description.annotation.AnnotationList;
 import net.bytebuddy.description.field.FieldDescription;
@@ -32,6 +32,7 @@ import net.bytebuddy.implementation.MethodCall;
 import net.bytebuddy.implementation.MethodDelegation;
 import net.bytebuddy.matcher.ElementMatcher;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.lang.annotation.Annotation;
 import java.util.Collection;
@@ -54,11 +55,13 @@ import org.jmolecules.ddd.types.Identifier;
 import org.jmolecules.jpa.JMoleculesJpa;
 
 @Slf4j
-public class JMoleculesJpaPlugin extends NoOp {
+public class JMoleculesJpaPlugin implements Plugin {
 
 	@Override
 	public boolean matches(TypeDescription target) {
-		return !target.isAnnotation() && !target.getInterfaces().filter(nameStartsWith("org.jmolecules")).isEmpty();
+
+		return !target.isAnnotation()
+				&& !target.getInterfaces().filter(nameStartsWith("org.jmolecules")).isEmpty();
 	}
 
 	/*
@@ -88,6 +91,13 @@ public class JMoleculesJpaPlugin extends NoOp {
 
 		return builder;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see java.io.Closeable#close()
+	 */
+	@Override
+	public void close() throws IOException {}
 
 	private static Builder<?> handleAggregateRoot(Builder<?> builder, TypeDescription type) {
 

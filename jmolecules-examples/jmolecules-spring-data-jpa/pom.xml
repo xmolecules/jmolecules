@@ -88,14 +88,7 @@
 				<dependencies>
 					<dependency>
 						<groupId>${project.groupId}</groupId>
-						<artifactId>jmolecules-jpa-plugin</artifactId>
-						<version>${project.version}</version>
-						<optional>true</optional>
-					</dependency>
-
-					<dependency>
-						<groupId>${project.groupId}</groupId>
-						<artifactId>jmolecules-spring</artifactId>
+						<artifactId>jmolecules-bytebuddy</artifactId>
 						<version>${project.version}</version>
 						<optional>true</optional>
 					</dependency>
@@ -103,10 +96,7 @@
 				<configuration>
 					<transformations>
 						<transformation>
-							<plugin>org.jmolecules.spring.JMoleculesSpringPlugin</plugin>
-						</transformation>
-						<transformation>
-							<plugin>org.jmolecules.jpa.plugin.JMoleculesJpaPlugin</plugin>
+							<plugin>org.jmolecules.bytebuddy.JMoleculesPlugin</plugin>
 						</transformation>
 					</transformations>
 				</configuration>

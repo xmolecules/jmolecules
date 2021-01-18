@@ -39,6 +39,6 @@ public class Application {
 		Orders orders = context.getBean(Orders.class);
 		Order order = orders.save(new Order(customer));
 
-		Customer resolved = customers.resolveRequired(order.getCustomer());
+		customers.resolveRequired(order.getCustomer());
 	}
 }

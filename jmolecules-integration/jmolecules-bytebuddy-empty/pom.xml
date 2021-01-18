@@ -2,42 +2,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>org.jmolecules</groupId>
 		<artifactId>jmolecules-integration</artifactId>
 		<version>1.1.0-SNAPSHOT</version>
 	</parent>
 
-	<name>jMolecules - JPA ByteBuddy plugin</name>
-	<artifactId>jmolecules-jpa-plugin</artifactId>
+	<!--
+		To make sure the ByteBuddy plugin works properly
+		even without JPA and Spring dependencies present
+		on the classpath.
+	-->
+	<name>jMolecules - ByteBuddy plugin (without dependencies)</name>
+
+	<artifactId>jmolecules-bytebuddy-empty</artifactId>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>jmolecules-ddd</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-
-		<dependency>
-			<groupId>${project.groupId}</groupId>
-			<artifactId>jmolecules-jpa</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-commons</artifactId>
-			<version>2.4.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>net.bytebuddy</groupId>
-			<artifactId>byte-buddy</artifactId>
-			<version>${bytebuddy.version}</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
@@ -49,25 +34,27 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>transform-test</goal>
+							<goal>transform</goal>
 						</goals>
 					</execution>
 				</executions>
 				<dependencies>
 					<dependency>
 						<groupId>${project.groupId}</groupId>
-						<artifactId>${project.artifactId}</artifactId>
+						<artifactId>jmolecules-bytebuddy</artifactId>
 						<version>${project.version}</version>
+						<optional>true</optional>
 					</dependency>
 				</dependencies>
 				<configuration>
 					<transformations>
 						<transformation>
-							<plugin>org.jmolecules.jpa.plugin.JMoleculesJpaPlugin</plugin>
+							<plugin>org.jmolecules.bytebuddy.JMoleculesPlugin</plugin>
 						</transformation>
 					</transformations>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

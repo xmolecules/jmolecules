@@ -13,8 +13,11 @@
 
 	<modules>
 		<module>jmolecules-archunit</module>
-		<module>jmolecules-jpa-plugin</module>
 	</modules>
+	
+	<properties>
+		<spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+	</properties>
 
 	<profiles>
 
@@ -24,8 +27,9 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<modules>
+				<module>jmolecules-bytebuddy</module>
+				<module>jmolecules-bytebuddy-empty</module>
 				<module>jmolecules-jpa</module>
-				<module>jmolecules-spring</module>
 			</modules>
 		</profile>
 
@@ -35,29 +39,37 @@
 		</profile>
 
 	</profiles>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
-			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<version>${assertj.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>

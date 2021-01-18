@@ -1,12 +1,13 @@
-package org.jmolecules.spring;
+package org.jmolecules.bytebuddy;
 
 import lombok.extern.slf4j.Slf4j;
-import net.bytebuddy.build.Plugin.NoOp;
+import net.bytebuddy.build.Plugin;
 import net.bytebuddy.description.annotation.AnnotationDescription;
 import net.bytebuddy.description.type.TypeDescription;
 import net.bytebuddy.dynamic.ClassFileLocator;
 import net.bytebuddy.dynamic.DynamicType.Builder;
 
+import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -17,10 +18,10 @@ import org.jmolecules.ddd.annotation.Service;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-public class JMoleculesSpringPlugin extends NoOp {
+public class JMoleculesSpringPlugin implements Plugin {
 
 	private static Set<Class<?>> ANNOTATIONS = new HashSet<>(
-			Arrays.asList(Service.class, Repository.class, Factory.class));
+			Arrays.asList(Service.class, Repository.class, org.jmolecules.ddd.annotation.Factory.class));
 
 	@Override
 	public boolean matches(TypeDescription target) {
@@ -48,6 +49,13 @@ public class JMoleculesSpringPlugin extends NoOp {
 
 		return builder;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see java.io.Closeable#close()
+	 */
+	@Override
+	public void close() throws IOException {}
 
 	private static Builder<?> addAnnotationIfMissing(Class<? extends Annotation> annotation, Builder<?> builder,
 			TypeDescription type) {

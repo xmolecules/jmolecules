@@ -13,30 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.examples.jpa.customer;
+package example;
 
-import lombok.Getter;
-
-import java.time.LocalDate;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-import org.jmolecules.ddd.types.Entity;
+import org.jmolecules.ddd.annotation.Service;
 
 /**
  * @author Oliver Drotbohm
  */
-@Getter
-public class SomeEntity implements Entity<Customer, Long> {
-
-	private @Id @GeneratedValue Long id;
-	private final LocalDate date;
-	private String firstname;
-
-	public SomeEntity(String firstname) {
-
-		this.firstname = firstname;
-		this.date = null;
-	}
-}
+@Service
+public class Sample {}
