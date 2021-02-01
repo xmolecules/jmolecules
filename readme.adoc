@@ -86,14 +86,6 @@ Currently, annotations for Layered and Onion Architecture exist.
 **** `@ApplicationRing`
 **** `@InfrastructureRing`
 
-== Technology integration
-* link:jmolecules-integration/jmolecules-archunit[`jmolecules-archunit`] -- ArchUnit rules that verify the aggregate structures in your model.
-* link:jmolecules-integration/jmolecules-jpa[`jmolecules-jpa`] -- A ByteBuddy plugin to derive default JPA mappings for code that expresses DDD building blocks via `jmolecules-ddd`.
-* link:jmolecules-integration/jmolecules-spring[`jmolecules-spring`] -- A ByteBuddy plugin to derive Spring component annotations for code that expresses DDD building blocks via `jmolecules-ddd`.
-
-== Examples
-* link:jmolecules-examples[`jmolecules-examples`] -- A collection of examples to showcase the usage of the concept types and annotations as well as the technology integration.
-
 == Installation
 To use jMolecules in your project just install it from the Maven central repository.
 

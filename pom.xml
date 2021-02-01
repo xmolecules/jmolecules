@@ -15,16 +15,10 @@
 		<module>jmolecules-ddd</module>
 		<module>jmolecules-events</module>
 		<module>jmolecules-architecture</module>
-		<module>jmolecules-integration</module>
 	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<assertj.version>3.15.0</assertj.version>
-		<bytebuddy.version>1.10.19</bytebuddy.version>
-		<junit.version>5.6.1</junit.version>
-		<lombok.version>1.18.12</lombok.version>
-		<slf4j.version>1.7.30</slf4j.version>
 	</properties>
 
 	<licenses>
@@ -66,15 +60,6 @@
 	</contributors>
 
 	<profiles>
-		<profile>
-			<id>default</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<modules>
-				<module>jmolecules-examples</module>
-			</modules>
-		</profile>
 		<profile>
 			<id>sonatype</id>
 			<build>
