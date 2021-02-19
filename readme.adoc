@@ -101,7 +101,7 @@ To use jMolecules in your project just install it from the Maven central reposit
 <dependency>
   <groupId>org.jmolecules</groupId>
   <artifactId>jmolecules-ddd</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ----
 
@@ -109,7 +109,7 @@ To use jMolecules in your project just install it from the Maven central reposit
 
 [source,groovy]
 ----
-compile("org.jmolecules:jmolecules-ddd:1.0.0")
+compile("org.jmolecules:jmolecules-ddd:1.1.0")
 ----
 
 == Release instructions
