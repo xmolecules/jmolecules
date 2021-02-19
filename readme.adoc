@@ -70,6 +70,11 @@ Currently, annotations for Layered and Onion Architecture exist.
 
 === Libraries
 * link:jmolecules-architecture[`jmolecules-architecture`] -- annotations to express architectural styles in code.
+** link:jmolecules-architecture/jmolecules-cqrs-architecture[`jmolecules-cqrs-architecture`] -- CQRS architecture
+*** `@Command`
+*** `@CommandDispatcher`
+*** `@CommandHandler`
+*** `@QueryModel`
 ** link:jmolecules-architecture/jmolecules-layered-architecture[`jmolecules-layered-architecture`] -- Layered architecture
 *** `@DomainLayer`
 *** `@ApplicationLayer`
