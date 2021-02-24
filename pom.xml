@@ -19,6 +19,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<assertj.version>3.18.1</assertj.version>
+		<junit.version>5.7.0</junit.version>
 	</properties>
 
 	<licenses>
@@ -104,6 +106,21 @@
 			</distributionManagement>
 		</profile>
 	</profiles>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 
