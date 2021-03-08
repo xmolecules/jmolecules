@@ -14,20 +14,8 @@
 	<name>jMolecules - Layered Architecure</name>
 	<description>Concepts of the layered architecture style.</description>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<archive>
-						<manifestEntries>
-							<Automatic-Module-Name>org.jmolecules.architecture.layered</Automatic-Module-Name>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<properties>
+		<module.name>org.jmolecules.architecture.layered</module.name>
+	</properties>
 
 </project>

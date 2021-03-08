@@ -14,20 +14,8 @@
 	<name>jMolecules - CQRS Architecture</name>
 	<description>Concepts of the cqrs architecture style.</description>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<archive>
-						<manifestEntries>
-							<Automatic-Module-Name>org.jmolecules.architecture.cqrs</Automatic-Module-Name>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<properties>
+		<module.name>org.jmolecules.architecture.cqrs</module.name>
+	</properties>
 
 </project>

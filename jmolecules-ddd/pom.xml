@@ -12,20 +12,8 @@
 
 	<name>jMolecules - DDD</name>
 
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<archive>
-						<manifestEntries>
-							<Automatic-Module-Name>org.jmolecules.ddd</Automatic-Module-Name>
-						</manifestEntries>
-					</archive>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+	<properties>
+		<module.name>org.jmolecules.ddd</module.name>
+	</properties>
 
 </project>
