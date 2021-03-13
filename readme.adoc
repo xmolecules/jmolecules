@@ -30,7 +30,26 @@ So in a banking domain we don't want `BankAccountEntity`, `CurrencyVO` or even `
 Instead, we want `BankAccount`, `Currency` and `Accounts` – like in the example above.
 
 Still, we want to express that a given class (or other architectural element) is a special building block; i.e. uses a design pattern.
-jMolecules provide a set of standard annotations (and alternatively marker interfaces) for the building blocks known from DDD.
+jMolecules provide a set of standard annotations for the building blocks known from DDD.
+
+=== Using a type based model
+
+As an alternative to the above mentioned annotations, jMolecules also provides a set of interfaces, largely based on the ideas presented in John Sullivan's series https://scabl.blogspot.com/p/advancing-enterprise-ddd.html["Advancing Enterprise DDD"].
+They allow expressing relationships between the building blocks right within the type system, so that the compiler can help to verify model correctness and the information can also be processed by Java reflection more easily.
+
+* `Identifier` -- A type to represent types that are supposed to act as identifiers.
+* `Identifiable<ID>` -- Anything that's exposing an identifier.
+* `Entity<T extends AggregateRoot<T, ?>, ID> extends Identifiable<ID>` -- An entity, declaring to which `AggregateRoot` it belongs and which identifier it exposes.
+* `AggregateRoot<T extends AggregateRoot<T, ID>, ID extends Identifier> extends Entity<T, ID>` -- an aggregate root being an `Entity` belonging to itself exposing a dedicated `Identifier`
+* `Association<T extends AggregateRoot<T, ID>, ID extends Identifier> extends Identifiable<ID>` -- an explicit association to a target `AggregateRoot`.
+
+This arrangement gives guidance to modeling and allows to easily verify the following rules, potentially via reflection:
+
+* Enforced, dedicated identifier types per aggregate to avoid identifiers for different aggregates mixed up.
+* `AggregateRoot` must only refer to `Entity` instances that were declared to belong to it.
+* ``AggregateRoot``s and ``Entity``s must only refer to other `AggregateRoots` via `Association` instances.
+
+For automated verification and runtime technology integration see https://github.com/xmolecules/jmolecules-integrations#jmoleculestechnology-integrations[jMolecules Integrations].
 
 === Libraries
 * link:jmolecules-ddd[`jmolecules-ddd`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
