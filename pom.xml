@@ -12,10 +12,11 @@
 	<url>https://github.com/xmolecules/jmolecules</url>
 
 	<modules>
-		<module>jmolecules-ddd</module>
-		<module>jmolecules-events</module>
-		<module>jmolecules-architecture</module>
-	</modules>
+        <module>jmolecules-ddd</module>
+        <module>jmolecules-events</module>
+        <module>jmolecules-architecture</module>
+        <module>kmolecules-ddd</module>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -106,8 +107,8 @@
 			</distributionManagement>
 		</profile>
 	</profiles>
-	
-	<dependencies>
+
+    <dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter</artifactId>
@@ -137,8 +138,8 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
-			<plugin>
+
+            <plugin>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
