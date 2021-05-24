@@ -35,7 +35,7 @@ public class AssociationUnitTests {
 	}
 
 	@Test // #48
-	void createsAssoctionFromAggregate() {
+	void createsAssociationFromAggregate() {
 
 		SampleIdentifier identifier = new SampleIdentifier();
 		SampleAggregate aggregate = new SampleAggregate(identifier);
@@ -70,8 +70,8 @@ public class AssociationUnitTests {
 		Association<?, SampleIdentifier> simpleAssociation = Association.forId(identifier);
 		SampleAssociation sampleAssociation = new SampleAssociation(identifier);
 
-		assertThat(simpleAssociation.pointsToSameAggregateAs(sampleAssociation));
-		assertThat(sampleAssociation.pointsToSameAggregateAs(simpleAssociation));
+		assertThat(simpleAssociation.pointsToSameAggregateAs(sampleAssociation)).isTrue();
+		assertThat(sampleAssociation.pointsToSameAggregateAs(simpleAssociation)).isTrue();
 	}
 
 	@Test // #48
