@@ -12,7 +12,7 @@
 	<name>jDDD - ArchUnit rules</name>
 
 	<properties>
-		<archunit.version>0.13.1</archunit.version>
+		<archunit.version>0.19.0</archunit.version>
 		<spring.version>5.2.6.RELEASE</spring.version>
 	</properties>
 
