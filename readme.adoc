@@ -3,7 +3,7 @@
 A set of libraries to help developers work with architectural concepts in Java.
 Goals:
 
-* Express that a piece of code (package, class, method...) implements an architectural concept.
+* Express that a piece of code (a package, class, or method) implements an architectural concept.
 * Make it easy for the human reader to determine what kind of architectural concepts a given piece of code is.
 * Allow tool integration (to do interesting stuff like generating persistence or static architecture analysis to check for validations of the architectural rules.)
 
@@ -110,8 +110,9 @@ Currently, annotations for Layered and Onion Architecture exist.
 **** `@ApplicationRing`
 **** `@InfrastructureRing`
 
-== Installation
-To use jMolecules in your project just install it from the Maven central repository.
+== Usage
+To use jMolecules in your project just declare a dependency to it.
+Release binaries are available from the Maven central repository.
 
 === Maven
 
@@ -131,7 +132,21 @@ To use jMolecules in your project just install it from the Maven central reposit
 compile("org.jmolecules:jmolecules-ddd:1.2.0")
 ----
 
-== Release instructions
+== Tool integration
+
+The jMolecules concepts expressed in code can be used to verify rules that stem from the concepts' definitions, generate documentation or even generate technical code needed to express the concept in a certain target technology.
+
+=== Verification and documentation
+* https://github.com/jqassistant-contrib/jqassistant-jmolecules-plugin[jQAssistant plugin] -- to verify rules applying to the different architectural styles, DDD building blocks, CQRS and events. Also creates PlantUML diagrams from the information available in the codebase.
+* https://github.com/xmolecules/jmolecules-integrations/tree/main/jmolecules-archunit[ArchUnit rules] -- allow to verify relationships between DDD building blocks.
+* https://github.com/odrotbohm/moduliths[Moduliths] -- supports detection of jMolecules components, DDD building blocks and events for module model and documentation purposes (see http://odrotbohm.de/2021/07/moduliths-1.1-released/[blog post] for more information).
+
+=== Runtime technology integration
+* https://github.com/xmolecules/jmolecules-integrations[Spring, Data JPA, Data MongoDB, Data JDBC and Jackson integration] -- to make code using jMolecules annotations work out of the box in those technologies.
+
+== Developer information
+
+=== Release instructions
 
 * `mvn release:prepare -DscmReleaseCommitComment="$ticketId - Release version $version." -DscmDevelopmentCommitComment="$ticketId - Prepare next development iteration."`
 * `mvn release:perform -Dgpg.keyname=$keyname`
