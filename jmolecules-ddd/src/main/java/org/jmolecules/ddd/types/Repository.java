@@ -33,4 +33,4 @@ package org.jmolecules.ddd.types;
  *      Reference (Evans) - Repositories</a>
  * @since 1.2
  */
-public interface Repository<T extends AggregateRoot<T, ID>, ID extends Identifier> {}
+public interface Repository<T extends AggregateRoot<T, ID>, ID extends Identifier<T, ID>> {}

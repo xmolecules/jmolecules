@@ -104,7 +104,7 @@ public class AssociationUnitTests {
 				.isThrownBy(() -> association.pointsTo((SampleAggregate) null));
 	}
 
-	static class SampleIdentifier implements Identifier {}
+	static class SampleIdentifier implements Identifier<SampleAggregate, SampleIdentifier> {}
 
 	static class SampleAggregate implements AggregateRoot<SampleAggregate, SampleIdentifier> {
 

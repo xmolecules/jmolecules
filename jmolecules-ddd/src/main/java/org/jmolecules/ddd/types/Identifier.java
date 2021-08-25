@@ -22,6 +22,6 @@ package org.jmolecules.ddd.types;
  * @author Oliver Drotbohm
  * @see Identifiable
  */
-public interface Identifier {
+public interface Identifier<T extends Identifiable<T, ID>, ID extends Identifier<T, ID>> {
 
 }

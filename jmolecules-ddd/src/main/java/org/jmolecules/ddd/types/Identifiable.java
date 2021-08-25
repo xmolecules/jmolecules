@@ -20,7 +20,7 @@ package org.jmolecules.ddd.types;
  *
  * @author Oliver Drotbohm
  */
-public interface Identifiable<ID> {
+public interface Identifiable<T extends Identifiable<T, ID>, ID extends Identifier<T, ID>> {
 
 	/**
 	 * Returns the identifier.

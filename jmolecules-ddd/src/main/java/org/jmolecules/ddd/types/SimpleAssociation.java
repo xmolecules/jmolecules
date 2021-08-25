@@ -26,7 +26,7 @@ import java.util.function.Supplier;
  * @see Association#forId(Identifier)
  * @see Association#forAggregate(AggregateRoot)
  */
-class SimpleAssociation<T extends AggregateRoot<T, ID>, ID extends Identifier> implements Association<T, ID> {
+class SimpleAssociation<T extends AggregateRoot<T, ID>, ID extends Identifier<T, ID>> implements Association<T, ID> {
 
 	private final Supplier<ID> identifier;
 

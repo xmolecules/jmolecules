@@ -32,4 +32,5 @@ package org.jmolecules.ddd.types;
  * @see <a href="https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating
  *      the Aggregate</a>
  */
-public interface Entity<T extends AggregateRoot<T, ?>, ID> extends Identifiable<ID> {}
+public interface Entity<T extends AggregateRoot<T, ?>, ID extends Identifier<S, ID>, S extends Entity<T, ID, S>>
+		extends Identifiable<S, ID> {}
