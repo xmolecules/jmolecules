@@ -121,7 +121,7 @@ Release binaries are available from the Maven central repository.
 <dependency>
   <groupId>org.jmolecules</groupId>
   <artifactId>jmolecules-ddd</artifactId>
-  <version>1.2.0</version>
+  <version>1.3.0</version>
 </dependency>
 ----
 
@@ -129,7 +129,7 @@ Release binaries are available from the Maven central repository.
 
 [source,groovy]
 ----
-compile("org.jmolecules:jmolecules-ddd:1.2.0")
+compile("org.jmolecules:jmolecules-ddd:1.3.0")
 ----
 
 == Tool integration
