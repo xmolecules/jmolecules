@@ -83,4 +83,41 @@ public interface Association<T extends AggregateRoot<T, ID>, ID extends Identifi
 
 		return getId().equals(other.getId());
 	}
+
+	/**
+	 * Returns whether the current {@link Association} points to the {@link AggregateRoot} with the given
+	 * {@link Identifier}. Unlike {@link #equals(Object)} and {@link #hashCode()} that also check for type equality of the
+	 * {@link Association} itself, this only compares the target {@link Identifier} instances.
+	 *
+	 * @param identifier
+	 * @return whether the current {@link Association} points to the {@link AggregateRoot} with the given
+	 *         {@link Identifier}.
+	 * @since 1.4
+	 */
+	default boolean pointsTo(ID identifier) {
+
+		if (identifier == null) {
+			throw new IllegalArgumentException("Identifier must not be null!");
+		}
+
+		return getId().equals(identifier);
+	}
+
+	/**
+	 * Returns whether the current {@link Association} points to the given {@link AggregateRoot}. Unlike
+	 * {@link #equals(Object)} and {@link #hashCode()} that also check for type equality of the {@link Association}
+	 * itself, this only compares the target {@link Identifier} instances.
+	 *
+	 * @param aggregate must not be {@literal null}.
+	 * @return whether the current {@link Association} points to the given {@link AggregateRoot}.
+	 * @since 1.4
+	 */
+	default boolean pointsTo(T aggregate) {
+
+		if (aggregate == null) {
+			throw new IllegalArgumentException("Aggregate must not be null!");
+		}
+
+		return pointsTo(aggregate.getId());
+	}
 }

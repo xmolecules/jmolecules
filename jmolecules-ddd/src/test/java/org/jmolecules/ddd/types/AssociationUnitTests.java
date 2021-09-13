@@ -81,6 +81,29 @@ public class AssociationUnitTests {
 				.isThrownBy(() -> Association.forId(new SampleIdentifier()).pointsToSameAggregateAs(null));
 	}
 
+	@Test // #61
+	void pointsToSameIdentifier() {
+
+		SampleIdentifier identifier = new SampleIdentifier();
+		SampleAssociation association = new SampleAssociation(identifier);
+
+		assertThat(association.pointsTo(identifier)).isTrue();
+		assertThatIllegalArgumentException()
+				.isThrownBy(() -> association.pointsTo((SampleIdentifier) null));
+	}
+
+	@Test // #61
+	void pointsToSameAggregateRoot() {
+
+		SampleIdentifier identifier = new SampleIdentifier();
+		SampleAggregate aggregate = new SampleAggregate(identifier);
+		SampleAssociation association = new SampleAssociation(identifier);
+
+		assertThat(association.pointsTo(aggregate)).isTrue();
+		assertThatIllegalArgumentException()
+				.isThrownBy(() -> association.pointsTo((SampleAggregate) null));
+	}
+
 	static class SampleIdentifier implements Identifier {}
 
 	static class SampleAggregate implements AggregateRoot<SampleAggregate, SampleIdentifier> {
