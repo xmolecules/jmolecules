@@ -4,7 +4,7 @@
 
 	<groupId>org.jmolecules</groupId>
 	<artifactId>jmolecules</artifactId>
-	<version>1.4.0</version>
+	<version>1.4.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>jMolecules</name>
@@ -222,7 +222,7 @@
 		<url>https://github.com/xmolecules/jmolecules</url>
 		<connection>scm:git:https://github.com/xmolecules/jmolecules</connection>
 		<developerConnection>scm:git:ssh://git@github.com/xmolecules/jmolecules.git</developerConnection>
-		<tag>1.4.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 </project>
