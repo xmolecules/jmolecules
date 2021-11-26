@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Declares a field of a class to constitute the identity of the corresponding class. Primarily used in
+ * Declares a field (or a getter) of a class to constitute the identity of the corresponding class. Primarily used in
  * {@link AggregateRoot} and {@link Entity} types.
  *
  * @author Oliver Drotbohm
@@ -33,6 +33,6 @@ import java.lang.annotation.Target;
  *      Reference (Evans) - Entities</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD, ElementType.ANNOTATION_TYPE })
+@Target({ ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE })
 @Documented
 public @interface Identity {}
