@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>jmolecules-cqrs-architecture</module>
+		<module>jmolecules-hexagonal-architecture</module>
 		<module>jmolecules-layered-architecture</module>
 		<module>jmolecules-onion-architecture</module>
 	</modules>

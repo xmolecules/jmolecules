@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 the original author or authors.
+ * Copyright 2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.architecture.onion.hexagonal;
+package org.jmolecules.architecture.hexagonal;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,14 +22,14 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies the {@link SecondaryAdapter} in an hexagonal architecture. 
- * It is also known as Driven Adapters and represents the connection to your back-end (databases, external libs, network communication, etc. 
- * These adapters react to actions iniated by the primary adapters. The secondary adapters are implementations of the outbound port. 
- * Which in return depend on interfaces of these external libraries and tools to transform them, so the core application can use these without being coupled to them.
+ * {@link SecondaryAdapter}s implement {@link SecondaryPort} to ultimately link the applications core to some extrenal
+ * technology, like a database, message broker, email server or third-party service.
  *
+ * @author Oliver Drotbohm
+ * @see SecondaryPort
  */
+@Adapter
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface SecondaryAdapter {
-}
+public @interface SecondaryAdapter {}

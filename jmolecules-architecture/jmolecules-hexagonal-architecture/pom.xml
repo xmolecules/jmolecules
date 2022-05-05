@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>jmolecules-architecture</artifactId>
+		<groupId>org.jmolecules</groupId>
+		<version>1.5.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>jmolecules-hexagonal-architecture</artifactId>
+
+	<name>jMolecules - Hexagonal Architecture</name>
+	<description>Concepts of the hexagonal architecture style.</description>
+
+	<properties>
+		<module.name>org.jmolecules.architecture.hexagonal</module.name>
+	</properties>
+
+</project>

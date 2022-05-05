@@ -1,11 +1,11 @@
 /*
- * Copyright 2020 the original author or authors.
+ * Copyright 2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.architecture.onion.hexagonal;
+package org.jmolecules.architecture.hexagonal;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,14 +22,18 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies the {@link CoreLogic} in an hexagonal architecture. 
- * The core logic, or business logic, of an application consists of the algorithms that are essential to its purpose. 
- * They implement the use cases that are the heart of the application.
- * All dependencies are in the direction of the core logic. The core itself does not depend on anything.
+ * An annotation to assign packages and types the role of core application code. That code must not refer to any
+ * {@link Adapter} code but only either expose or depend on functionality through {@link Port}s connecting the
+ * application to the outside world.
  *
+ * @author ???
+ * @author Oliver Drotbohm
+ * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
+ * @see Port
+ * @see Adapter
+ * @since 1.5
  */
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface CoreLogic {
-}
+public @interface Application {}

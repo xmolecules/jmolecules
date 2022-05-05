@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 the original author or authors.
+ * Copyright 2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.architecture.onion.hexagonal;
+package org.jmolecules.architecture.hexagonal;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,12 +22,17 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies the {@link OutputPort} in an hexagonal architecture. 
- * An outbound port define the core’s view of the outside world. This are the interface the core need to communicate with the outside world.
+ * An {@link SecondaryPort} describes abstractions that describes interfaces to the outside that are driven by the
+ * application's core, like a repository (to interact with a database) or a message publisher. Usually
+ * {@link SecondaryPort}s are implemented by {@link SecondaryAdapter}s.
  *
+ * @author Oliver Drotbohm
+ * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
+ * @see SecondaryAdapter
+ * @since 1.5
  */
+@Port
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface OutputPort {
-}
+public @interface SecondaryPort {}
