@@ -15,12 +15,14 @@
 		<module>jmolecules-ddd</module>
 		<module>jmolecules-events</module>
 		<module>jmolecules-architecture</module>
+		<module>kmolecules-ddd</module>
 	</modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<assertj.version>3.20.2</assertj.version>
 		<junit.version>5.7.2</junit.version>
+		<kotlin.version>1.6.21</kotlin.version>
 	</properties>
 
 	<licenses>
