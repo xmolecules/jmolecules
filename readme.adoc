@@ -71,7 +71,8 @@ For automated verification and runtime technology integration see https://github
 * link:jmolecules-events[`jmolecules-events`] -- annotations and interfaces to express the concept of events in code.
 
 == Use Case: Expressing architectural concepts
-jMolecules provides annotations to mark a package as a layer (or ring):
+jMolecules provides annotations to describe higher-level architectural concepts following the styles of Layered, Onion and Hexagonal Architecture.
+They allow you to mark a package as a layer, ring, or containing ports and adapters.
 
 [source,java]
 ----
@@ -83,7 +84,7 @@ package org.acmebank.domain;
 @ApplicationLayer
 package org.acmebank.application;
 ----
-That way, all classes in the respective package are considered to be part of the annotated layer.
+That way, all classes in the respective package are considered to be part of the annotated layer, ring, or considered a port / adapter.
 
 Alternatively, classes can be annotated directly:
 
@@ -100,7 +101,7 @@ public class BankAccount { /* ... */ }
 public class TransferMoney { /* ... */ }
 ----
 
-Currently, annotations for Layered and Onion Architecture exist.
+Currently, annotations for Layered, Onion and Hexagonal Architecture exist.
 
 === Available Libraries
 
@@ -125,6 +126,10 @@ Currently, annotations for Layered and Onion Architecture exist.
 **** `@DomainRing`
 **** `@ApplicationRing`
 **** `@InfrastructureRing`
+** link:jmolecules-architecture/jmolecules-hexagonal-architecture[`jmolecules-hexagonal-architecture`] -- Hexagonal architecture
+*** `@Application`
+*** `@(Primary|Secondary)Adapter`
+*** `@(Primary|Secondary)Port`
 
 == Use Case: Generate Technical Boilerplate Code
 
