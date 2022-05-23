@@ -69,6 +69,7 @@ For automated verification and runtime technology integration see https://github
 === Available Libraries
 * link:jmolecules-ddd[`jmolecules-ddd`] -- annotations and interfaces to express DDD building blocks (value objects, entities, aggregate roots etc.) in code.
 * link:jmolecules-events[`jmolecules-events`] -- annotations and interfaces to express the concept of events in code.
+* link:kmolecules-ddd[`kmolecules-ddd`] -- Kotlin-based flavor of `jmolecules-ddd` to mitigate Kotlin/Java interop issues for the type based model.
 
 == Use Case: Expressing architectural concepts
 jMolecules provides annotations to describe higher-level architectural concepts following the styles of Layered, Onion and Hexagonal Architecture.
