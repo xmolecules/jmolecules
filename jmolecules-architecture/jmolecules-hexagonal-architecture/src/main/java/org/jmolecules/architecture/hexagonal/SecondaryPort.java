@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 the original author or authors.
+ * Copyright 2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.ddd.annotation;
+package org.jmolecules.architecture.hexagonal;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,17 +22,17 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Declares a field (or a getter) of a class to constitute the identity of the corresponding class. Primarily used in
- * {@link AggregateRoot} and {@link Entity} types.
+ * An {@link SecondaryPort} describes abstractions that describes interfaces to the outside that are driven by the
+ * application's core, like a repository (to interact with a database) or a message publisher. Usually
+ * {@link SecondaryPort}s are implemented by {@link SecondaryAdapter}s.
  *
  * @author Oliver Drotbohm
- * @author Stephan Pirnbaum
- * @author Henning Schwentner
- * @since 1.3
- * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
- *      Reference (Evans) - Entities</a>
+ * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
+ * @see SecondaryAdapter
+ * @since 1.5
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE })
+@Port
+@Retention(RetentionPolicy.CLASS)
+@Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface Identity {}
+public @interface SecondaryPort {}

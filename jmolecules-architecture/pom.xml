@@ -6,7 +6,7 @@
 	<parent>
 		<artifactId>jmolecules</artifactId>
 		<groupId>org.jmolecules</groupId>
-		<version>1.4.0-SNAPSHOT</version>
+		<version>1.6.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>jmolecules-architecture</artifactId>
@@ -17,6 +17,7 @@
 
 	<modules>
 		<module>jmolecules-cqrs-architecture</module>
+		<module>jmolecules-hexagonal-architecture</module>
 		<module>jmolecules-layered-architecture</module>
 		<module>jmolecules-onion-architecture</module>
 	</modules>
