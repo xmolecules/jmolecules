@@ -29,7 +29,7 @@ import java.lang.annotation.Target;
  * the Aggregate</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE, ElementType.FIELD})
+@Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE})
 @Documented
 public @interface Association {
 
