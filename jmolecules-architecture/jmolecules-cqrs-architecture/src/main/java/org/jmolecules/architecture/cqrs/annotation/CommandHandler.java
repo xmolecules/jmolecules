@@ -36,7 +36,7 @@ import java.lang.annotation.Target;
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE })
+@Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR })
 public @interface CommandHandler {
 
 	/**
@@ -44,7 +44,7 @@ public @interface CommandHandler {
 	 * easier linkage between command and handler by external tools and refers to {@link Command#namespace()}. When
 	 * leaving the default value, it is assumed that the method signature makes clear what command is consumed. If the
 	 * handler takes care of all commands of a specific namespace, the value of this field needs to be set to the
-	 * respective namespace and the {@link CommandHandler#name()} ()} needs to be set accordingly. If the handler doesn't
+	 * respective namespace and the {@link CommandHandler#name()} needs to be set accordingly. If the handler doesn't
 	 * care about the namespace, the value may be set to the '*' (asterisk) placeholder.
 	 */
 	String namespace() default "";
