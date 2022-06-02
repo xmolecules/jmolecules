@@ -55,4 +55,12 @@ public @interface DomainEvent {
 	 * @since 1.1
 	 */
 	String name() default "";
+
+	/**
+	 * Optional revision of the event. May be used in order to implement event upcasting.
+	 * @see <a href="https://leanpub.com/esversioning/read#leanpub-auto-define-a-version-of-an-event>
+	 * Versioning in an Event Sourced (Greg Young) - Define a Version of Event</a>
+	 * @since 1.6
+	 */
+	String revision() default "";
 }
