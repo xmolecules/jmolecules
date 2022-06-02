@@ -15,9 +15,6 @@
  */
 package org.jmolecules.ddd.annotation
 
-import java.lang.annotation.Documented
-import java.lang.annotation.Retention
-import java.lang.annotation.RetentionPolicy
 import kotlin.reflect.KClass
 
 /**
@@ -27,9 +24,9 @@ import kotlin.reflect.KClass
  * @see [](https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating
 the Aggregate</a>
 ) */
-@Retention(RetentionPolicy.RUNTIME)
+@Retention(AnnotationRetention.RUNTIME)
 @Target(AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.CLASS)
-@Documented
+@MustBeDocumented
 annotation class Association(
     /**
      * Defines the aggregate type.
