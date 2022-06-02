@@ -25,7 +25,13 @@ import kotlin.reflect.KClass
 the Aggregate</a>
 ) */
 @Retention(AnnotationRetention.RUNTIME)
-@Target(AnnotationTarget.ANNOTATION_CLASS, AnnotationTarget.CLASS)
+@Target(
+    AnnotationTarget.ANNOTATION_CLASS,
+    AnnotationTarget.CLASS,
+    AnnotationTarget.FIELD,
+    AnnotationTarget.PROPERTY,
+    AnnotationTarget.PROPERTY_GETTER
+)
 @MustBeDocumented
 annotation class Association(
     /**
