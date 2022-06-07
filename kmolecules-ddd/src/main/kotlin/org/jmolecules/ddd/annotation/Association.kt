@@ -1,5 +1,5 @@
 /*
- * Copyright 2020-2021 the original author or authors.
+ * Copyright 2022 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +18,26 @@ package org.jmolecules.ddd.annotation
 import kotlin.reflect.KClass
 
 /**
- * An association to an [org.jmolecules.ddd.types.AggregateRoot].
+ * An association to an [org.jmolecules.ddd.annotation.AggregateRoot].
  *
  * @author Simon Zambrovski
- * @see [](https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating
-the Aggregate</a>
-) */
+ * @author Oliver Drotbohm
+ * @see [John Sullivan - Advancing Enterprise DDD - Reinstating the Aggregate](https://scabl.blogspot.com/2015/04/aeddd-9.html)
+ */
 @Retention(AnnotationRetention.RUNTIME)
 @Target(
     AnnotationTarget.ANNOTATION_CLASS,
-    AnnotationTarget.CLASS,
     AnnotationTarget.FIELD,
     AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER
 )
 @MustBeDocumented
 annotation class Association(
+
     /**
      * Defines the aggregate type.
      *
-     * @return class defining the identifiable type of the aggregate.
+     * @return the type of the aggregate.
      */
-    val identifiableType: KClass<*> = Unit::class
+    val aggregateType: KClass<*> = Unit::class
 )
