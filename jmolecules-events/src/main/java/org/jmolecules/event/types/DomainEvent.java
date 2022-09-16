@@ -16,7 +16,7 @@
 package org.jmolecules.event.types;
 
 /**
- * /** A domain event is a full-fledged part of the domain model, a representation of something that happened in the
+ * A domain event is a full-fledged part of the domain model, a representation of something that happened in the
  * domain. It allows making the events that the domain experts want to track or be notified of explicit, or which are
  * associated with state change in the other model objects.
  *
