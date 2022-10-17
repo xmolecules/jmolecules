@@ -30,13 +30,23 @@ Example: A banking domain.
 import org.jmolecules.ddd.annotation.*;
 
 @Entity
-public class BankAccount { /* ... */ }
+class BankAccount {
+
+    @Identity
+    final IBAN iban;
+
+    /* ... */
+
+}
 
 @ValueObject
-public class Currency { /* ... */ }
+class IBAN { /* ... */ }
+
+@ValueObject
+record Currency { /* ... */ }
 
 @Repository
-public class Accounts { /* ... */ }
+class Accounts { /* ... */ }
 ----
 
 When we take Ubiquitous Language serious, we want names (for classes, methods, etc.) that only contain words from the domain language.
