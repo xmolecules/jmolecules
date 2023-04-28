@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.architecture.cqrs.annotation;
+package org.jmolecules.architecture.cqrs;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -22,9 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies a query model element in the context of CQRS, i.e. a (persistent) object optimized for read-access and
- * only only on the Q(uery) part of the architecture. The query model represents the current state or rather
- * materialized view after replaying the events published by the application.
+ * Identifies a command dispatcher in the context of CQRS, i.e. logic to dispatch a {@link Command}.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
@@ -32,12 +30,17 @@ import java.lang.annotation.Target;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  * @since 1.1
- * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young</a>
- * @deprecated since 1.7, for removal in 2.0. Use {@link org.jmolecules.architecture.cqrs.QueryModel} instead.
+ * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young - Commands</a>
  */
-@org.jmolecules.architecture.cqrs.QueryModel
-@Deprecated
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-public @interface QueryModel {}
+@Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE })
+public @interface CommandDispatcher {
+
+	/**
+	 * Optional identification of the command dispatched by this dispatcher. This information may be used for easier
+	 * linkage between command and dispatcher by external tools and refers to the combination of
+	 * {@link Command#namespace()} and {@link Command#name()}, separated by '.' (dot).
+	 */
+	String dispatches() default "";
+}

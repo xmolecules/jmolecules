@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.architecture.cqrs.annotation;
+package org.jmolecules.architecture.cqrs;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -34,10 +34,7 @@ import java.lang.annotation.Target;
  * @author Oliver Drotbohm
  * @since 1.1
  * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young - Commands</a>
- * @deprecated since 1.7, for removal in 2.0. Use {@link org.jmolecules.architecture.cqrs.Command} instead.
  */
-@org.jmolecules.architecture.cqrs.Command
-@Deprecated
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)

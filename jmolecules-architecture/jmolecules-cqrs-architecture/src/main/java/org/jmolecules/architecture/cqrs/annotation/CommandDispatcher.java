@@ -31,16 +31,19 @@ import java.lang.annotation.Target;
  * @author Oliver Drotbohm
  * @since 1.1
  * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young - Commands</a>
+ * @deprecated since 1.7, for removal in 2.0. Use {@link org.jmolecules.architecture.cqrs.CommandDispatcher} instead.
  */
+@org.jmolecules.architecture.cqrs.CommandDispatcher
+@Deprecated
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE })
 public @interface CommandDispatcher {
 
-	/**
-	 * Optional identification of the command dispatched by this dispatcher. This information may be used for easier
-	 * linkage between command and dispatcher by external tools and refers to the combination of
-	 * {@link Command#namespace()} and {@link Command#name()}, separated by '.' (dot).
-	 */
-	String dispatches() default "";
+    /**
+     * Optional identification of the command dispatched by this dispatcher. This information may be used for easier
+     * linkage between command and dispatcher by external tools and refers to the combination of
+     * {@link Command#namespace()} and {@link Command#name()}, separated by '.' (dot).
+     */
+    String dispatches() default "";
 }

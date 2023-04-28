@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jmolecules.architecture.cqrs.annotation;
+package org.jmolecules.architecture.cqrs;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -33,32 +33,29 @@ import java.lang.annotation.Target;
  * @author Oliver Drotbohm
  * @since 1.1
  * @see <a href="http://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young - Commands</a>
- * @deprecated since 1.7, for removal in 2.0. Use {@link org.jmolecules.architecture.cqrs.CommandHandler} instead.
  */
-@org.jmolecules.architecture.cqrs.CommandHandler
-@Deprecated
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.METHOD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR })
 public @interface CommandHandler {
 
-    /**
-     * Optional identification of the namespace of the command handled by this handler. This information may be used for
-     * easier linkage between command and handler by external tools and refers to {@link Command#namespace()}. When
-     * leaving the default value, it is assumed that the method signature makes clear what command is consumed. If the
-     * handler takes care of all commands of a specific namespace, the value of this field needs to be set to the
-     * respective namespace and the {@link CommandHandler#name()} needs to be set accordingly. If the handler doesn't
-     * care about the namespace, the value may be set to the '*' (asterisk) placeholder.
-     */
-    String namespace() default "";
+	/**
+	 * Optional identification of the namespace of the command handled by this handler. This information may be used for
+	 * easier linkage between command and handler by external tools and refers to {@link Command#namespace()}. When
+	 * leaving the default value, it is assumed that the method signature makes clear what command is consumed. If the
+	 * handler takes care of all commands of a specific namespace, the value of this field needs to be set to the
+	 * respective namespace and the {@link CommandHandler#name()} needs to be set accordingly. If the handler doesn't
+	 * care about the namespace, the value may be set to the '*' (asterisk) placeholder.
+	 */
+	String namespace() default "";
 
-    /**
-     * Optional identification of the name of the command handled by this handler. This information may be used for
-     * easier linkage between command and handler by external tools and refers to {@link Command#name()}. When leaving
-     * the default value, it is assumed that the method signature makes clear what command is consumed. If the handler
-     * takes care of all commands of a specific namespace, the value of this field needs to be set to the '*' (asterisk)
-     * placeholder.
-     */
-    String name() default "";
+	/**
+	 * Optional identification of the name of the command handled by this handler. This information may be used for easier
+	 * linkage between command and handler by external tools and refers to {@link Command#name()}. When leaving the
+	 * default value, it is assumed that the method signature makes clear what command is consumed. If the handler takes
+	 * care of all commands of a specific namespace, the value of this field needs to be set to the '*' (asterisk)
+	 * placeholder.
+	 */
+	String name() default "";
 
 }
