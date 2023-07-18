@@ -38,4 +38,17 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface Port {}
+public @interface Port {
+
+    /**
+     * An identifier for the name of the {@link Port} to identify and group multiple implementing classes of the same {@link Port}.
+     * If not set, external tooling may default this to the simple name of the annotated type or package.
+     */
+    String name() default "";
+
+    /**
+     * A description of the {@link Port}. If not set, external tooling may default this to the JavaDoc.
+     */
+    String description() default "";
+
+}

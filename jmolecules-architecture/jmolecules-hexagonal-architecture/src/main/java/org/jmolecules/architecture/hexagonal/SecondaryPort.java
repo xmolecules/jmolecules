@@ -35,4 +35,17 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface SecondaryPort {}
+public @interface SecondaryPort {
+
+    /**
+     * An identifier for the name of the {@link SecondaryPort} to identify and group multiple implementing classes of the same {@link SecondaryPort}.
+     * If not set, external tooling may default this to the simple name of the annotated type or package.
+     */
+    String name() default "";
+
+    /**
+     * A description of the {@link SecondaryPort}. If not set, external tooling may default this to the JavaDoc.
+     */
+    String description() default "";
+
+}

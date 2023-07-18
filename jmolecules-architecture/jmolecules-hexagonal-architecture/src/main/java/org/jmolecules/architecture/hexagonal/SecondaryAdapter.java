@@ -32,4 +32,17 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface SecondaryAdapter {}
+public @interface SecondaryAdapter {
+
+    /**
+     * An identifier for the name of the {@link SecondaryAdapter} to identify and group multiple implementing classes of the same {@link SecondaryAdapter}.
+     * If not set, external tooling may default this to the simple name of the annotated type or package.
+     */
+    String name() default "";
+
+    /**
+     * A description of the {@link SecondaryAdapter}. If not set, external tooling may default this to the JavaDoc.
+     */
+    String description() default "";
+
+}

@@ -34,4 +34,17 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface PrimaryPort {}
+public @interface PrimaryPort {
+
+    /**
+     * An identifier for the name of the {@link PrimaryPort} to identify and group multiple implementing classes of the same {@link PrimaryPort}.
+     * If not set, external tooling may default this to the simple name of the annotated type or package.
+     */
+    String name() default "";
+
+    /**
+     * A description of the {@link PrimaryPort}. If not set, external tooling may default this to the JavaDoc.
+     */
+    String description() default "";
+
+}
