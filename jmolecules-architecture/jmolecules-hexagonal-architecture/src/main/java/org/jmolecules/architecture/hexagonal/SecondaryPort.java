@@ -27,6 +27,7 @@ import java.lang.annotation.Target;
  * {@link SecondaryPort}s are implemented by {@link SecondaryAdapter}s.
  *
  * @author Oliver Drotbohm
+ * @author Stephan Pirnbaum
  * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
  * @see SecondaryAdapter
  * @since 1.5
@@ -35,4 +36,21 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface SecondaryPort {}
+public @interface SecondaryPort {
+
+	/**
+	 * An identifier for the name of the {@link SecondaryPort} to identify and group multiple implementing classes of the
+	 * same {@link SecondaryPort}. If not set, external tooling may default this to the simple name of the annotated type
+	 * or package.
+	 *
+	 * @since 1.8
+	 */
+	String name() default "";
+
+	/**
+	 * A description of the {@link SecondaryPort}. If not set, external tooling may default this to the JavaDoc.
+	 *
+	 * @since 1.8
+	 */
+	String description() default "";
+}

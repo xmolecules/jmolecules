@@ -26,6 +26,7 @@ import java.lang.annotation.Target;
  * application's core. For example, it could be a component accepting HTTP requests or a listener for a message broker.
  *
  * @author Oliver Drotbohm
+ * @author Stephan Pirnbaum
  * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
  * @see PrimaryPort
  * @since 1.5
@@ -34,4 +35,21 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface PrimaryAdapter {}
+public @interface PrimaryAdapter {
+
+	/**
+	 * An identifier for the name of the {@link PrimaryAdapter} to identify and group multiple implementing classes of the
+	 * same {@link PrimaryAdapter}. If not set, external tooling may default this to the simple name of the annotated type
+	 * or package.
+	 *
+	 * @since 1.8
+	 */
+	String name() default "";
+
+	/**
+	 * A description of the {@link PrimaryAdapter}. If not set, external tooling may default this to the JavaDoc.
+	 *
+	 * @since 1.8
+	 */
+	String description() default "";
+}

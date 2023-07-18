@@ -26,6 +26,7 @@ import java.lang.annotation.Target;
  * {@link Port}s (see {@link SecondaryPort}). Adapters must not depend on {@link Application} code other than ports.
  *
  * @author Oliver Drotbohm
+ * @author Stephan Pirnbaum
  * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
  * @see Application
  * @see Port
@@ -36,4 +37,20 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface Adapter {}
+public @interface Adapter {
+
+	/**
+	 * An identifier for the name of the {@link Adapter} to identify and group multiple implementing classes of the same
+	 * {@link Adapter}. If not set, external tooling may default this to the simple name of the annotated type or package.
+	 *
+	 * @since 1.8
+	 */
+	String name() default "";
+
+	/**
+	 * A description of the {@link Adapter}. If not set, external tooling may default this to the JavaDoc.
+	 *
+	 * @since 1.8
+	 */
+	String description() default "";
+}

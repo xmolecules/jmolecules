@@ -28,6 +28,7 @@ import java.lang.annotation.Target;
  * technology.
  *
  * @author Oliver Drotbohm
+ * @author Stephan Pirnbaum
  * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
  * @see Adapter
  * @see Application
@@ -38,4 +39,20 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface Port {}
+public @interface Port {
+
+	/**
+	 * An identifier for the name of the {@link Port} to identify and group multiple implementing classes of the same
+	 * {@link Port}. If not set, external tooling may default this to the simple name of the annotated type or package.
+	 *
+	 * @since 1.8
+	 */
+	String name() default "";
+
+	/**
+	 * A description of the {@link Port}. If not set, external tooling may default this to the JavaDoc.
+	 *
+	 * @since 1.8
+	 */
+	String description() default "";
+}

@@ -26,6 +26,7 @@ import java.lang.annotation.Target;
  * the outside to drive the application. A {@link PrimaryAdapter} would refer to those ports in its implementation.
  *
  * @author Oliver Drotbohm
+ * @author Stephan Pirnbaum
  * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
  * @see PrimaryAdapter
  * @since 1.5
@@ -34,4 +35,21 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface PrimaryPort {}
+public @interface PrimaryPort {
+
+	/**
+	 * An identifier for the name of the {@link PrimaryPort} to identify and group multiple implementing classes of the
+	 * same {@link PrimaryPort}. If not set, external tooling may default this to the simple name of the annotated type or
+	 * package.
+	 *
+	 * @since 1.8
+	 */
+	String name() default "";
+
+	/**
+	 * A description of the {@link PrimaryPort}. If not set, external tooling may default this to the JavaDoc.
+	 *
+	 * @since 1.8
+	 */
+	String description() default "";
+}
