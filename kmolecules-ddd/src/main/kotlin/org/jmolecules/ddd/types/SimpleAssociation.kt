@@ -38,9 +38,7 @@ class SimpleAssociation<T : AggregateRoot<T, ID>, ID : Identifier>(private val i
 
         other as SimpleAssociation<*, *>
 
-        if (id != other.id) return false
-
-        return true
+        return id == other.id
     }
 
     override fun hashCode(): Int = id.hashCode()
