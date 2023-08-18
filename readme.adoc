@@ -163,6 +163,7 @@ The jMolecules concepts expressed in code can be used to verify rules that stem 
 == Installation
 To use jMolecules in your project just declare a dependency to it.
 Release binaries are available from the Maven central repository.
+To avoid having to declare all versions explicitly, we recommend using the https://github.com/xmolecules/jmolecules-bom[`jmolecules-bom`] in your dependency management section.
 
 === Maven
 
@@ -171,7 +172,7 @@ Release binaries are available from the Maven central repository.
 <dependency>
   <groupId>org.jmolecules</groupId>
   <artifactId>jmolecules-ddd</artifactId>
-  <version>1.4.0</version>
+  <version>1.9.0</version>
 </dependency>
 ----
 
@@ -183,7 +184,7 @@ repositories {
   mavenCentral()
 }
 dependencies {
-  implementation("org.jmolecules:jmolecules-ddd:1.4.0")
+  implementation("org.jmolecules:jmolecules-ddd:1.9.0")
 }
 ----
 
