@@ -15,6 +15,7 @@
 
 	<properties>
 		<module.name>org.kmolecules.ddd</module.name>
+		<dokka.version>1.8.20</dokka.version>
 	</properties>
 
 	<dependencies>
@@ -64,7 +65,7 @@
 					<plugin>
 						<groupId>org.jetbrains.dokka</groupId>
 						<artifactId>dokka-maven-plugin</artifactId>
-						<version>${kotlin.version}</version>
+						<version>${dokka.version}</version>
 						<executions>
 							<execution>
 								<phase>package</phase>
@@ -78,7 +79,7 @@
 								<plugin>
 									<groupId>org.jetbrains.dokka</groupId>
 									<artifactId>kotlin-as-java-plugin</artifactId>
-									<version>${kotlin.version}</version>
+									<version>${dokka.version}</version>
 								</plugin>
 							</dokkaPlugins>
 						</configuration>
