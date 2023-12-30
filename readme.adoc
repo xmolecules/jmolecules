@@ -156,7 +156,7 @@ The jMolecules concepts expressed in code can be used to verify rules that stem 
 
 === Available Libraries
 
-* https://github.com/jqassistant-contrib/jqassistant-jmolecules-plugin[jQAssistant plugin] -- to verify rules applying to the different architectural styles, DDD building blocks, CQRS and events. Also creates PlantUML diagrams from the information available in the codebase.
+* https://github.com/jqassistant-plugin/jqassistant-jmolecules-plugin[jQAssistant plugin] -- to verify rules applying to the different architectural styles, DDD building blocks, CQRS and events. Also creates PlantUML diagrams from the information available in the codebase.
 * https://github.com/xmolecules/jmolecules-integrations/tree/main/jmolecules-archunit[ArchUnit rules] -- allow to verify relationships between DDD building blocks.
 * https://github.com/odrotbohm/moduliths[Moduliths] -- supports detection of jMolecules components, DDD building blocks and events for module model and documentation purposes (see http://odrotbohm.de/2021/07/moduliths-1.1-released/[blog post] for more information).
 
