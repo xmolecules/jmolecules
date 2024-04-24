@@ -82,19 +82,28 @@ For automated verification and runtime technology integration see https://github
 * link:kmolecules-ddd[`kmolecules-ddd`] -- Kotlin-based flavor of `jmolecules-ddd` to mitigate Kotlin/Java interop issues for the type based model.
 
 == Use Case: Expressing architectural concepts
-jMolecules provides annotations to describe higher-level architectural concepts following the styles of Layered, Onion and Hexagonal Architecture.
-They allow you to mark a package as a layer, ring, or containing ports and adapters.
+jMolecules provides annotations to describe higher-level architectural concepts following the styles of Layered, Onion, and Hexagonal Architectures.
+They allow you to mark an entire package as a layer, ring, or one containing ports and adapters.
+These would appear in the `package-info.java` file for each package that you want to annotate, e.g.:
 
 [source,java]
+.`package-info.java` for Domain layer:
 ----
-import org.jmolecules.architecture.layered.*;
-
 @DomainLayer
 package org.acmebank.domain;
 
+import org.jmolecules.architecture.layered.*;
+----
+
+[source,java]
+.`package-info.java` for Application layer:
+----
 @ApplicationLayer
 package org.acmebank.application;
+
+import org.jmolecules.architecture.layered.*;
 ----
+
 That way, all classes in the respective package are considered to be part of the annotated layer, ring, or considered a port / adapter.
 
 Alternatively, classes can be annotated directly:
@@ -112,7 +121,7 @@ public class BankAccount { /* ... */ }
 public class TransferMoney { /* ... */ }
 ----
 
-Currently, annotations for Layered, Onion and Hexagonal Architecture exist.
+Currently, annotations for Layered, Onion, and Hexagonal Architecture exist.
 
 === Available Libraries
 
