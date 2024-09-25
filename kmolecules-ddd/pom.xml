@@ -15,7 +15,7 @@
 
 	<properties>
 		<module.name>org.kmolecules.ddd</module.name>
-		<dokka.version>1.8.20</dokka.version>
+		<dokka.version>1.9.20</dokka.version>
 	</properties>
 
 	<dependencies>
