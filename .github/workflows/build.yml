@@ -22,5 +22,5 @@ jobs:
         java-version: 8
         cache: 'maven'
 
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Build and deploy snapshot
+      run: ./mvnw -B deploy --file pom.xml -s settings.xml -DossrhUsername=${{ secrets.OSSRH_USERNAME }} -DossrhPassword=${{ secrets.OSSRH_PASSWORD }}

@@ -222,6 +222,13 @@
 
 	</build>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<scm>
 		<url>https://github.com/xmolecules/jmolecules</url>
 		<connection>scm:git:https://github.com/xmolecules/jmolecules</connection>
