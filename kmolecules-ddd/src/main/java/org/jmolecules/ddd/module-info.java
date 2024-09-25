@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 module org.kmolecules.ddd {
+
 	exports org.jmolecules.ddd.annotation;
 	exports org.jmolecules.ddd.types;
+
+	opens org.jmolecules.ddd.annotation;
+	opens org.jmolecules.ddd.types;
 }

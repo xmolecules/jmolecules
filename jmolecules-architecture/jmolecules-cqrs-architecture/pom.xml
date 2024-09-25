@@ -14,8 +14,4 @@
 	<name>jMolecules - CQRS Architecture</name>
 	<description>Concepts of the cqrs architecture style.</description>
 
-	<properties>
-		<module.name>org.jmolecules.architecture.cqrs</module.name>
-	</properties>
-
 </project>

@@ -14,8 +14,4 @@
 	<name>jMolecules - Hexagonal Architecture</name>
 	<description>Concepts of the hexagonal architecture style.</description>
 
-	<properties>
-		<module.name>org.jmolecules.architecture.hexagonal</module.name>
-	</properties>
-
 </project>

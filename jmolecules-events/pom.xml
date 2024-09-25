@@ -12,8 +12,4 @@
 
 	<name>jMolecules - Events</name>
 
-	<properties>
-		<module.name>org.jmolecules.event</module.name>
-	</properties>
-
 </project>

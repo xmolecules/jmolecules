@@ -14,8 +14,4 @@
 	<name>jMolecules - Layered Architecure</name>
 	<description>Concepts of the layered architecture style.</description>
 
-	<properties>
-		<module.name>org.jmolecules.architecture.layered</module.name>
-	</properties>
-
 </project>

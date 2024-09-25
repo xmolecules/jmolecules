@@ -14,5 +14,8 @@
  * limitations under the License.
  */
 module org.jmolecules.architecture.layered {
+
 	exports org.jmolecules.architecture.layered;
+
+	opens org.jmolecules.architecture.layered;
 }

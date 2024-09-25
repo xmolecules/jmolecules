@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 module org.jmolecules.architecture.onion {
+
 	exports org.jmolecules.architecture.onion.classical;
 	exports org.jmolecules.architecture.onion.simplified;
+
+	opens org.jmolecules.architecture.onion.classical;
+	opens org.jmolecules.architecture.onion.simplified;
 }

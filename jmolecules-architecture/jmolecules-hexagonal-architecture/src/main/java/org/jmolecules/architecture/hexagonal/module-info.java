@@ -14,5 +14,8 @@
  * limitations under the License.
  */
 module org.jmolecules.architecture.hexagonal {
+
 	exports org.jmolecules.architecture.hexagonal;
+
+	opens org.jmolecules.architecture.hexagonal;
 }
