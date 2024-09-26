@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module org.jmolecules.architecture.layered {
+open module org.jmolecules.architecture.layered {
 
 	exports org.jmolecules.architecture.layered;
-
-	opens org.jmolecules.architecture.layered;
 }
