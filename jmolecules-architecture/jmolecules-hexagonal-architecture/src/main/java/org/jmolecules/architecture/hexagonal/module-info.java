@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module org.jmolecules.architecture.hexagonal {
+open module org.jmolecules.architecture.hexagonal {
 
 	exports org.jmolecules.architecture.hexagonal;
-
-	opens org.jmolecules.architecture.hexagonal;
 }

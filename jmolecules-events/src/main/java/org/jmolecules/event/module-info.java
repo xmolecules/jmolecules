@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module org.jmolecules.event {
+open module org.jmolecules.event {
 
 	exports org.jmolecules.event.annotation;
 	exports org.jmolecules.event.types;
-
-	opens org.jmolecules.event.annotation;
-	opens org.jmolecules.event.types;
 }

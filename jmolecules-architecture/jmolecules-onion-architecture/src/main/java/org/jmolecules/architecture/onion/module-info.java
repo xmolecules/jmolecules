@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module org.jmolecules.architecture.onion {
+open module org.jmolecules.architecture.onion {
 
 	exports org.jmolecules.architecture.onion.classical;
 	exports org.jmolecules.architecture.onion.simplified;
-
-	opens org.jmolecules.architecture.onion.classical;
-	opens org.jmolecules.architecture.onion.simplified;
 }

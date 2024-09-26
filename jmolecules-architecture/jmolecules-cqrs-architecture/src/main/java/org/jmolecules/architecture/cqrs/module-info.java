@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-module org.jmolecules.architecture.cqrs {
+open module org.jmolecules.architecture.cqrs {
 
 	exports org.jmolecules.architecture.cqrs;
 	exports org.jmolecules.architecture.cqrs.annotation;
-
-	opens org.jmolecules.architecture.cqrs;
-	opens org.jmolecules.architecture.cqrs.annotation;
 }
