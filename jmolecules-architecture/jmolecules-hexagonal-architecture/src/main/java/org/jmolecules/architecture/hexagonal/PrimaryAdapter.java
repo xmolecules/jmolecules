@@ -32,7 +32,7 @@ import java.lang.annotation.Target;
  * @since 1.5
  */
 @Adapter
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
 public @interface PrimaryAdapter {

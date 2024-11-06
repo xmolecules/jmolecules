@@ -34,8 +34,7 @@ import java.lang.annotation.Target;
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
  *      Reference (Evans) - Layered Architecture</a>
  */
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface DomainLayer {
-}
+public @interface DomainLayer {}
