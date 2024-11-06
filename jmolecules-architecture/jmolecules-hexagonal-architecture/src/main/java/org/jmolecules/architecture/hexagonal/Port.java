@@ -36,7 +36,7 @@ import java.lang.annotation.Target;
  * @see SecondaryPort
  * @since 1.5
  */
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
 public @interface Port {

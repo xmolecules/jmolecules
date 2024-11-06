@@ -24,7 +24,7 @@ import kotlin.reflect.KClass
  * @author Oliver Drotbohm
  * @see [John Sullivan - Advancing Enterprise DDD - Reinstating the Aggregate](https://scabl.blogspot.com/2015/04/aeddd-9.html)
  */
-@Retention(AnnotationRetention.RUNTIME)
+@Retention
 @Target(
     AnnotationTarget.ANNOTATION_CLASS,
     AnnotationTarget.FIELD,

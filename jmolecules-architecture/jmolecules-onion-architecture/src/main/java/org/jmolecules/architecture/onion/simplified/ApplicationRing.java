@@ -22,8 +22,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Identifies the {@link ApplicationRing} in an onion architecture. The application ring implements and
- * orchestrates business use case. To do so, it only depends on the inner rings, i.e. the {@link DomainRing}.
+ * Identifies the {@link ApplicationRing} in an onion architecture. The application ring implements and orchestrates
+ * business use case. To do so, it only depends on the inner rings, i.e. the {@link DomainRing}.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
@@ -31,10 +31,9 @@ import java.lang.annotation.Target;
  * @author Martin Schimak
  * @author Oliver Drotbohm
  * @see <a href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/">The Onion Architecture : part 1
- * (Palermo)</a>
+ *      (Palermo)</a>
  */
-@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-public @interface ApplicationRing {
-}
+public @interface ApplicationRing {}
