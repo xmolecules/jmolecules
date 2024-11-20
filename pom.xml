@@ -98,6 +98,7 @@
 							<additionalOptions>
 								<additionalOption>-Xdoclint:none</additionalOption>
 							</additionalOptions>
+							<sourcepath>src/main/java</sourcepath>
 						</configuration>
 					</plugin>
 					<plugin>

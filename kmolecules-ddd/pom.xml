@@ -93,6 +93,9 @@
 	<profiles>
 		<profile>
 			<id>sonatype</id>
+			<properties>
+				<maven.javadoc.skip>true</maven.javadoc.skip>
+			</properties>
 			<build>
 				<plugins>
 					<plugin>
