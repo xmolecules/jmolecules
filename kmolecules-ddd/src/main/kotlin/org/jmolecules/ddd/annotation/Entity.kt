@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.annotation
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies an [Entity]. Entities represent a thread of continuity and identity, going through a lifecycle,
  * though their attributes may change. Means of identification may come from the outside, or it may be an arbitrary
@@ -30,4 +32,5 @@ package org.jmolecules.ddd.annotation
 @Retention
 @MustBeDocumented
 @Target(AnnotationTarget.CLASS)
+@Stereotype
 annotation class Entity

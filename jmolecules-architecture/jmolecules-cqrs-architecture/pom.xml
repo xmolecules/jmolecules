@@ -14,4 +14,12 @@
 	<name>jMolecules - CQRS Architecture</name>
 	<description>Concepts of the cqrs architecture style.</description>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.jmolecules</groupId>
+			<artifactId>jstereotype</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
 </project>

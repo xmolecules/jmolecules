@@ -1,0 +1,127 @@
+{
+	"stereotypes": [
+		{
+			"id": "org.jmolecules.ddd.AggregateRoot",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.AggregateRoot",
+				"org.jmolecules.ddd.types.AggregateRoot"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.Association",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Association",
+				"org.jmolecules.ddd.types.Association"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.BoundedContext",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.BoundedContext"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.Entity",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Entity",
+				"org.jmolecules.ddd.types.Entity"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 10
+		},
+		{
+			"id": "org.jmolecules.ddd.Factory",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Factory"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 10
+		},
+		{
+			"id": "org.jmolecules.ddd.Identifiable",
+			"assignments": [
+				"org.jmolecules.ddd.types.Identifiable"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 20
+		},
+		{
+			"id": "org.jmolecules.ddd.Identifier",
+			"assignments": [
+				"org.jmolecules.ddd.types.Identifier"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.Module",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Module"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.Repository",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Repository",
+				"org.jmolecules.ddd.types.Repository"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.Service",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Service"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		},
+		{
+			"id": "org.jmolecules.ddd.ValueObject",
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.ValueObject",
+				"org.jmolecules.ddd.types.ValueObject"
+			],
+			"groups": [
+				"org.jmolecules.ddd"
+			],
+			"priority": 0
+		}
+	],
+	"groups": [
+		{
+			"ids": [
+				"org.jmolecules.ddd"
+			],
+			"displayName": "Domain-Driven Design"
+		}
+	]
+}

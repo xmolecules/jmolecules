@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * An identifiable type, i.e. anything that exposes an [Identifier].
  *
@@ -23,6 +25,7 @@ package org.jmolecules.ddd.types
  * @author Jocelyn Ntakpe
  * @since 1.0
  */
+@Stereotype
 interface Identifiable<ID> {
 
     /**
