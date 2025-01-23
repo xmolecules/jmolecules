@@ -4,12 +4,20 @@
 
 	<parent>
 		<groupId>org.jmolecules</groupId>
-		<artifactId>jmolecules</artifactId>
+		<artifactId>jmolecules-parent</artifactId>
 		<version>2.0.0-STEREOTYPE-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>jmolecules-events</artifactId>
 
 	<name>jMolecules - Events</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jmolecules</groupId>
+			<artifactId>jstereotype</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
 
 </project>

@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a domain {@link Service}. A service is a significant process or transformation in the domain that is not a
  * natural responsibility of an entity or value object, add an operation to the model as a standalone interface declared
@@ -37,6 +39,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
+@Stereotype(priority = 0)
 public @interface Service {
 
 }

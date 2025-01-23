@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a query model element in the context of CQRS, i.e. a (persistent) object optimized for read-access and
  * only only on the Q(uery) part of the architecture. The query model represents the current state or rather
@@ -37,4 +39,5 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
+@Stereotype
 public @interface QueryModel {}

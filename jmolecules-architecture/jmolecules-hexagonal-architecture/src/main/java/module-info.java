@@ -16,4 +16,6 @@
 open module org.jmolecules.architecture.hexagonal {
 
 	exports org.jmolecules.architecture.hexagonal;
+
+	requires org.jmolecules.stereotype;
 }

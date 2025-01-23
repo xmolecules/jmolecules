@@ -21,22 +21,26 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * An association to an {@link org.jmolecules.ddd.annotation.AggregateRoot}.
  *
  * @author Simon Zambrovski
  * @author Oliver Drotbohm
- * @see <a href="https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating the Aggregate</a>
+ * @see <a href="https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating
+ *      the Aggregate</a>
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE})
+@Target({ ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE })
 @Documented
+@Stereotype(priority = 0)
 public @interface Association {
 
-    /**
-     * Defines the aggregate type.
-     *
-     * @return the of the aggregate.
-     */
-    Class<?> aggregateType() default void.class;
+	/**
+	 * Defines the aggregate type.
+	 *
+	 * @return the of the aggregate.
+	 */
+	Class<?> aggregateType() default void.class;
 }

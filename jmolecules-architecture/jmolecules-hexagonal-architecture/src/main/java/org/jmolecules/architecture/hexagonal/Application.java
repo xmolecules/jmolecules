@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * An annotation to assign packages and types the role of core application code. That code must not refer to any
  * {@link Adapter} code but only either expose or depend on functionality through {@link Port}s connecting the
@@ -36,4 +38,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 400)
 public @interface Application {}

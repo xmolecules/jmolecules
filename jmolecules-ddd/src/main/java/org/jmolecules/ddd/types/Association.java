@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * An association to an {@link AggregateRoot}.
  *
@@ -27,6 +29,7 @@ package org.jmolecules.ddd.types;
  * @see <a href="https://scabl.blogspot.com/2015/04/aeddd-9.html">John Sullivan - Advancing Enterprise DDD - Reinstating
  *      the Aggregate</a>
  */
+@Stereotype(priority = 0)
 public interface Association<T extends AggregateRoot<T, ID>, ID extends Identifier> extends Identifiable<ID> {
 
 	/**

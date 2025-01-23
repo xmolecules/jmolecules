@@ -1,0 +1,45 @@
+{
+	"stereotypes" : [
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.PrimaryAdapter",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 100
+		},
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.SecondaryAdapter",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 200
+		},
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.Adapter",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 300
+		},
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.PrimaryPort",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 100
+		},
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.SecondaryPort",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 200
+		},
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.Port",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 300
+		},
+		{
+			"id" : "org.jmolecules.architecture.hexagonal.Application",
+			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"priority" : 400
+		}
+	],
+	"groups" : [
+		{
+			"ids": [ "org.jmolecules.architecture.hexagonal" ],
+			"displayName" : "Hexagonal Architecture"
+		}
+	]
+}

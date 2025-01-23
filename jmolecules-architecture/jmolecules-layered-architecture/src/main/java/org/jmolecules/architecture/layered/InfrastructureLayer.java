@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies the {@link InfrastructureLayer} in a layered architecture. The infrastructure layer supports the other
  * layers by providing technical capabilities such as persistence or message sending. Furthermore, it may also support
@@ -40,4 +42,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype
 public @interface InfrastructureLayer {}

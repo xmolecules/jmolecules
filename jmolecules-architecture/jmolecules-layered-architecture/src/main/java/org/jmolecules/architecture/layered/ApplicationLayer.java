@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies the {@link ApplicationLayer} in a layered architecture. The application layer is coordinating the
  * execution of business flows without containing business rules, but by utilizing the {@link DomainLayer}. It also
@@ -40,4 +42,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype
 public @interface ApplicationLayer {}

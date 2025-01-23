@@ -15,6 +15,8 @@
  */
 package org.jmolecules.event.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Interface to marks domain events as to be externalized, which means that they are intended to be published to
  * infrastructure outside the application.
@@ -22,4 +24,5 @@ package org.jmolecules.event.types;
  * @author Oliver Drotbohm
  * @since 1.8
  */
+@Stereotype
 public interface Externalized {}

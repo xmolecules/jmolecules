@@ -17,4 +17,6 @@ open module org.jmolecules.ddd {
 
 	exports org.jmolecules.ddd.annotation;
 	exports org.jmolecules.ddd.types;
+
+	requires org.jmolecules.stereotype;
 }

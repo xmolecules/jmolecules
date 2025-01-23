@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * A {@link PrimaryAdapter} connects the outside of an application to an {@link PrimaryPort} exposed by the
  * application's core. For example, it could be a component accepting HTTP requests or a listener for a message broker.
@@ -35,6 +37,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 100)
 public @interface PrimaryAdapter {
 
 	/**

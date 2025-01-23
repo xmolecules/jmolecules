@@ -1,0 +1,22 @@
+{
+	"stereotypes" : [
+		{
+			"id" : "org.jmolecules.architecture.onion.ApplicationRing",
+			"assignments" : [ "@org.jmolecules.architecture.onion.simplified.ApplicationRing" ],
+			"groups" : [ "org.jmolecules.architecture.onion" ],
+			"priority" : 10
+		},
+		{
+			"id" : "org.jmolecules.architecture.onion.InfrastructureRing",
+			"assignments" : [ "@org.jmolecules.architecture.onion.simplified.InfrastructureRing" ],
+			"groups" : [ "org.jmolecules.architecture.onion" ],
+			"priority" : 0
+		}
+	],
+	"groups" : [
+		{
+			"ids" : [ "org.jmolecules.architecture.onion" ],
+			"displayName" : "Onion Architecture"
+		}
+	]
+}

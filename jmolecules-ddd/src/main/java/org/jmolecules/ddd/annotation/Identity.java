@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Declares a field (or a getter) of a class to constitute the identity of the corresponding class. Primarily used in
  * {@link AggregateRoot} and {@link Entity} types.
@@ -35,4 +37,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE })
 @Documented
+@Stereotype(priority = 0)
 public @interface Identity {}

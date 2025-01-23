@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a value object. Domain concepts that are modeled as value objects have no conceptual identity or
  * lifecycle. Implementations should be immutable, operations on it are side-effect free.
@@ -36,6 +38,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
+@Stereotype(priority = 0)
 public @interface ValueObject {
 
 }

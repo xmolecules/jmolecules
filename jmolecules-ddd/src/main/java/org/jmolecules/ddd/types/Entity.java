@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies an {@link Entity}. Entities represent a thread of continuity and identity, going through a lifecycle,
  * though their attributes may change. Means of identification may come from the outside, or it may be an arbitrary
@@ -32,4 +34,5 @@ package org.jmolecules.ddd.types;
  * @see <a href="https://scabl.blogspot.com/2015/04/aeddd-9.html>John Sullivan - Advancing Enterprise DDD - Reinstating
  *      the Aggregate</a>
  */
+@Stereotype(priority = 10)
 public interface Entity<T extends AggregateRoot<T, ?>, ID> extends Identifiable<ID> {}

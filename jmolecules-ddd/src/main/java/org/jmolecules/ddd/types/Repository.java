@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a {@link Repository}. Repositories simulate a collection of aggregates to which aggregate instances can be
  * added and removed. They usually also expose API to select a subset of aggregates matching certain criteria. Access to
@@ -33,4 +35,5 @@ package org.jmolecules.ddd.types;
  *      Reference (Evans) - Repositories</a>
  * @since 1.2
  */
+@Stereotype(priority = 0)
 public interface Repository<T extends AggregateRoot<T, ID>, ID extends Identifier> {}

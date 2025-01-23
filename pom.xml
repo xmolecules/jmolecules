@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.jmolecules</groupId>
-	<artifactId>jmolecules</artifactId>
+	<artifactId>jmolecules-parent</artifactId>
 	<version>2.0.0-STEREOTYPE-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>jMolecules</name>
+	<name>jMolecules - Project Parent</name>
 	<description>Architectural concepts in Java</description>
 	<url>https://github.com/xmolecules/jmolecules</url>
 
@@ -15,6 +15,7 @@
 		<module>jmolecules-ddd</module>
 		<module>jmolecules-events</module>
 		<module>jmolecules-architecture</module>
+		<module>jstereotype</module>
 		<module>kmolecules-ddd</module>
 	</modules>
 

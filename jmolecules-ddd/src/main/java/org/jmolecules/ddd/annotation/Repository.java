@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a {@link Repository}. Repositories simulate a collection of aggregates to which aggregate instances can be
  * added and removed. They usually also expose API to select a subset of aggregates matching certain criteria. Access to
@@ -41,6 +43,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
+@Stereotype(priority = 0)
 public @interface Repository {
 
 }
