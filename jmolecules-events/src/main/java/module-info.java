@@ -17,4 +17,6 @@ open module org.jmolecules.event {
 
 	exports org.jmolecules.event.annotation;
 	exports org.jmolecules.event.types;
+
+	requires org.jmolecules.stereotype;
 }

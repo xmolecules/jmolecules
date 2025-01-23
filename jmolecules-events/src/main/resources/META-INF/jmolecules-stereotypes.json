@@ -1,0 +1,31 @@
+{
+	"stereotypes" : {
+		"events.DomainEvent" : {
+			"assignments": [
+				"@org.jmolecules.event.annotation.DomainEvent",
+				"org.jmolecules.event.types.DomainEvent"
+			],
+			"groups": [ "events" ]
+		},
+		"events.DomainEventHandler" : {
+			"assignments": [
+				"@org.jmolecules.event.annotation.DomainEventHandler"
+			],
+			"groups": [ "org.jmolecules.event" ]
+		},
+		"events.Externalized" : {
+			"assignments": [
+				"@org.jmolecules.event.annotation.Externalized",
+				"org.jmolecules.event.types.Externalized"
+			],
+			"groups": [ "org.jmolecules.event" ]
+		}
+	},
+	"groups" : {
+		"events"  : {
+			"displayName" : "Events",
+			"type" : "design",
+			"priority" : 20
+		}
+	}
+}

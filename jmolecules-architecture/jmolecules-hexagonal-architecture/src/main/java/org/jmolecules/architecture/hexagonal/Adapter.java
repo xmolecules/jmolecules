@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * {@link Adapter}s contain technology specific implementations to either drive (see {@link PrimaryPort}) or implement
  * {@link Port}s (see {@link SecondaryPort}). Adapters must not depend on {@link Application} code other than ports.
@@ -37,6 +39,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 300)
 public @interface Adapter {
 
 	/**

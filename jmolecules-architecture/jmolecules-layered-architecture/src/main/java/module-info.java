@@ -16,4 +16,6 @@
 open module org.jmolecules.architecture.layered {
 
 	exports org.jmolecules.architecture.layered;
+
+	requires org.jmolecules.stereotype;
 }

@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Marker interface for identifiers. Exists primarily to easily identify types that are supposed to be identifiers
  * within the code base and let the compiler verify the correctness of declared relationships.
@@ -22,6 +24,7 @@ package org.jmolecules.ddd.types;
  * @author Oliver Drotbohm
  * @see Identifiable
  */
+@Stereotype(priority = 0)
 public interface Identifier {
 
 }

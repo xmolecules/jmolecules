@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies a value object. Domain concepts that are modeled as value objects have no conceptual identity or lifecycle.
  * Implementations should be immutable, operations on it are side-effect free.
@@ -25,4 +27,5 @@ package org.jmolecules.ddd.types
  * @see [Domain-Driven Design Reference (Evans) - Value objects](https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf)
  * @since 1.9
  */
+@Stereotype
 interface ValueObject

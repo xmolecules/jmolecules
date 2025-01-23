@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies an aggregate root, i.e. the root entity of an aggregate. An aggregate forms a cluster of consistent rules
  * usually formed around a set of entities by defining invariants based on the properties of the aggregate that have to
@@ -42,6 +44,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Documented
 @Entity
+@Stereotype(priority = 0)
 public @interface AggregateRoot {
 
 }

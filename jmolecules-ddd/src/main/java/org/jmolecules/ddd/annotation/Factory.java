@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a {@link Factory}. Factories encapsulate the responsibility of creating complex objects in general and
  * Aggregates in particular. Objects returned by the factory methods are guaranteed to be in valid state.
@@ -37,6 +39,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
+@Stereotype(priority = 0)
 public @interface Factory {
 
 }

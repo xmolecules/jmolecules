@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * A {@link Port} defines an entry point into the {@link Application} that can either drive it (see {@link PrimaryPort})
  * or be driven by the application (see {@link SecondaryPort}). They are the interface with which the application
@@ -39,6 +41,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 300, inherited = false)
 public @interface Port {
 
 	/**

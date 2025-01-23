@@ -1,0 +1,114 @@
+{
+	"stereotypes" : {
+		"ddd.AggregateRoot" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.AggregateRoot",
+				"org.jmolecules.ddd.types.AggregateRoot"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.Association" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Association",
+				"org.jmolecules.ddd.types.Association"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.BoundedContext" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.BoundedContext"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.Entity" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Entity",
+				"org.jmolecules.ddd.types.Entity"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 10
+		},
+		"ddd.Factory" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Factory"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 10
+		},
+		"ddd.Identifiable" : {
+			"assignments": [
+				"org.jmolecules.ddd.types.Identifiable"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 20
+		},
+		"ddd.Identifier" : {
+			"assignments": [
+				"org.jmolecules.ddd.types.Identifier"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.Module" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Module"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.Repository" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Repository",
+				"org.jmolecules.ddd.types.Repository"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.Service" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.Service"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 0
+		},
+		"ddd.ValueObject" : {
+			"assignments": [
+				"@org.jmolecules.ddd.annotation.ValueObject",
+				"org.jmolecules.ddd.types.ValueObject"
+			],
+			"groups": [
+				"ddd"
+			],
+			"priority": 30
+		}
+	},
+	"groups": {
+		"ddd" : {
+			"displayName": "Domain-Driven Design",
+			"type" : "design"
+		}
+	}
+}

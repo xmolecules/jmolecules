@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.annotation
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Declares a field (or a getter) of a class to constitute the identity of the corresponding class. Primarily used in
  *  [AggregateRoot] [Entity] types.
@@ -35,4 +37,5 @@ package org.jmolecules.ddd.annotation
     AnnotationTarget.PROPERTY,
     AnnotationTarget.PROPERTY_GETTER
 )
+@Stereotype
 annotation class Identity

@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * An {@link SecondaryPort} describes abstractions that describes interfaces to the outside that are driven by the
  * application's core, like a repository (to interact with a database) or a message publisher. Usually
@@ -36,6 +38,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 200, inherited = false)
 public @interface SecondaryPort {
 
 	/**

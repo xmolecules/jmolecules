@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies an [Entity]. Entities represent a thread of continuity and identity, going through a lifecycle,
  * though their attributes may change. Means of identification may come from the outside, or it may be an arbitrary
@@ -29,4 +31,5 @@ package org.jmolecules.ddd.types
  * See also: [Domain-Driven Design Reference (Evans) - Entities](https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf)
  * See also: [John Sullivan - Advancing Enterprise DDD - Reinstating the Aggregate](https://scabl.blogspot.com/2015/04/aeddd-9.html)
  */
+@Stereotype
 interface Entity<T : AggregateRoot<T, *>, ID> : Identifiable<ID>

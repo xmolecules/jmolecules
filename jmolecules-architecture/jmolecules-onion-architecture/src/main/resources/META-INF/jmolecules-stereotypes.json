@@ -1,0 +1,48 @@
+{
+	"stereotypes" : {
+		"architecture.onion.ApplicationRing" : {
+			"assignments" : [
+				"@architecture.onion.classical.ApplicationRing",
+				"@architecture.onion.simplified.ApplicationRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 300
+		},
+		"architecture.onion.DomainRing" : {
+			"assignments" : [
+				"@architecture.onion.simplified.DomainRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 200
+		},
+		"architecture.onion.DomainModelRing" : {
+			"assignments" : [
+				"@architecture.onion.classical.DomainModelRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 200
+		},
+		"architecture.onion.DomainServiceRing" : {
+			"assignments" : [
+				"@architecture.onion.classical.DomainServiceRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 200
+		},
+		"architecture.onion.InfrastructureRing" : {
+			"assignments" : [
+				"@architecture.onion.classical.InfrastructureRing",
+				"@architecture.onion.simplified.InfrastructureRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 100
+		}
+	},
+	"groups" : {
+		"architecture.onion" : {
+			"displayName" : "Onion Architecture",
+			"type" : "architecture",
+			"priority" : 10
+		}
+	}
+}

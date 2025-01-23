@@ -1,0 +1,63 @@
+{
+	"stereotypes" : {
+		"architecture.hexagonal.PrimaryAdapter" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.PrimaryAdapter"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 100
+		},
+		"architecture.hexagonal.SecondaryAdapter" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.SecondaryAdapter"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 200
+		},
+		"architecture.hexagonal.Adapter" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.Adapter"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 300
+		},
+		"architecture.hexagonal.PrimaryPort" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.PrimaryPort"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 100,
+			"inherited" : false
+		},
+		"architecture.hexagonal.SecondaryPort" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.SecondaryPort"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 200,
+			"inherited" : false
+		},
+		"architecture.hexagonal.Port" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.Port"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 300,
+			"inherited" : false
+		},
+		"architecture.hexagonal.Application" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.hexagonal.Application"
+			],
+			"groups" : [ "architecture.hexagonal" ],
+			"priority" : 400
+		}
+	},
+	"groups" : {
+		"architecture.hexagonal" : {
+			"displayName" : "Hexagonal Architecture",
+			"type" : "architecture",
+			"priority" : 20
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"stereotypes" : {
+		"architecture.layered.ApplicationLayer" : {
+			"groups" : [ "architecture.layered" ]
+		},
+		"architecture.layered.DomainLayer" : {
+			"groups" : [ "architecture.layered" ]
+		},
+		"architecture.layered.InfrastructureLayer" : {
+			"groups" : [ "architecture.layered" ]
+		},
+		"architecture.layered.InterfaceLayer" : {
+			"groups" : [ "architecture.layered" ]
+		}
+	},
+	"groups" : {
+		"architecture.layered" : {
+			"displayName" : "Layered Architecture",
+			"type" : "architecture",
+			"priority" : 30
+		}
+	}
+}

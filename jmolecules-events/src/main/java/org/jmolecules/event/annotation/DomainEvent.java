@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.
  * It allows making the events that the domain experts want to track or be notified of explicit, or which are associated
@@ -37,6 +39,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
+@Stereotype
 public @interface DomainEvent {
 
 	/**

@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies the {@link DomainServiceRing} in an onion architecture. The domain service ring defines the interfaces
  * needed for e.g. storing and retrieving data, i.e. repository interfaces. However, it does not provide the technical
@@ -38,4 +40,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype
 public @interface DomainServiceRing {}
