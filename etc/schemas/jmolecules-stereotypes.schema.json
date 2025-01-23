@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.jmolecules.org/jmolecules-stereotypes.schema.json",
+  "type": "object",
+  "description": "Configuration for jMolecules stereotypes",
+  "properties": {
+    "stereotypes": {
+      "type": "array",
+      "description": "List of stereotype definitions that can be applied to code elements",
+      "items": {
+        "type": "object",
+        "required": ["id", "assignments"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[\\w.-]+$",
+            "description": "Unique identifier for the stereotype using dot notation"
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Human-readable name for the stereotype (optional)"
+          },
+          "assignments": {
+            "type": "array",
+            "description": "List of type or annotation assignments that this stereotype can be applied to",
+            "items": {
+              "type": "string",
+              "pattern": "^@?[\\w.-]+$",
+              "description": "Type or annotation identifier, optionally prefixed with @ for annotations"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "groups": {
+            "type": "array",
+            "description": "Groups that this stereotype belongs to",
+            "items": {
+              "type": "string",
+              "pattern": "^[\\w.-]+$",
+              "description": "Group identifier using dot notation"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "Processing priority of the stereotype, defaults to 0"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "groups": {
+      "$ref": "https://schemas.jmolecules.org/jmolecules-groups.schema.json#/properties/groups"
+    }
+  },
+  "required": ["stereotypes"],
+  "additionalProperties": false
+}

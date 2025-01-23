@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * {@link SecondaryAdapter}s implement {@link SecondaryPort} to ultimately link the applications core to some extrenal
  * technology, like a database, message broker, email server or third-party service.
@@ -33,6 +35,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 200)
 public @interface SecondaryAdapter {
 
 	/**

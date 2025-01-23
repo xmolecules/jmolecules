@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Annotation to marks domain events as to be externalized, which means that they are intended to be published to
  * infrastructure outside the application.
@@ -31,6 +33,7 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.TYPE })
+@Stereotype
 public @interface Externalized {
 
 	/**

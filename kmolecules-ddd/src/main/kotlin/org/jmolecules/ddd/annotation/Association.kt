@@ -16,6 +16,7 @@
 package org.jmolecules.ddd.annotation
 
 import kotlin.reflect.KClass
+import org.jmolecules.stereotype.Stereotype
 
 /**
  * An association to an [org.jmolecules.ddd.annotation.AggregateRoot].
@@ -32,6 +33,7 @@ import kotlin.reflect.KClass
     AnnotationTarget.PROPERTY_GETTER
 )
 @MustBeDocumented
+@Stereotype
 annotation class Association(
 
     /**

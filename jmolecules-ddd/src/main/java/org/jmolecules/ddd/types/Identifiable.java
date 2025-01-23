@@ -15,11 +15,14 @@
  */
 package org.jmolecules.ddd.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * An identifiable type, i.e. anything that exposes an {@link Identifier}.
  *
  * @author Oliver Drotbohm
  */
+@Stereotype(priority = 20)
 public interface Identifiable<ID> {
 
 	/**

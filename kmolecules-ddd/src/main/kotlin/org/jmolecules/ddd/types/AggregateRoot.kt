@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies an aggregate root, i.e. the root entity of an aggregate. An aggregate forms a cluster of consistent rules
  * usually formed around a set of entities by defining invariants based on the properties of the aggregate that have to
@@ -32,4 +34,5 @@ package org.jmolecules.ddd.types
  * See also: [Domain-Driven Design Reference (Evans) - Aggregates](https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf)
  * See also: [John Sullivan - Advancing Enterprise DDD - Reinstating the Aggregate](https://scabl.blogspot.com/2015/04/aeddd-9.html)
  */
+@Stereotype
 interface AggregateRoot<T : AggregateRoot<T, ID>, ID : Identifier> : Entity<T, ID>

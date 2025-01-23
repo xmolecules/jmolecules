@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a command in the context of CQRS, i.e. a request to the system for the change of data. Commands are always
  * in imperative tense and thus, unlike an event, do not state that something has already happened, but something is
@@ -38,18 +40,19 @@ import java.lang.annotation.Target;
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
+@Stereotype
 public @interface Command {
 
-    /**
-     * An identifier for the namespace of the command to group multiple commands and let clients express their interest
-     * in all commands of a specific namespace. If not set, external tooling may default this to the fully-qualified
-     * package name of the annotated type.
-     */
-    String namespace() default "";
+	/**
+	 * An identifier for the namespace of the command to group multiple commands and let clients express their interest in
+	 * all commands of a specific namespace. If not set, external tooling may default this to the fully-qualified package
+	 * name of the annotated type.
+	 */
+	String namespace() default "";
 
-    /**
-     * An identifier for the name of the command used to abstract away from the type system and to guard against
-     * refactorings. If not set, external tooling may default this to the simple class name of the annotated type.
-     */
-    String name() default "";
+	/**
+	 * An identifier for the name of the command used to abstract away from the type system and to guard against
+	 * refactorings. If not set, external tooling may default this to the simple class name of the annotated type.
+	 */
+	String name() default "";
 }

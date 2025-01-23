@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.annotation
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies a domain [Service]. A service is a significant process or transformation in the domain that is not a
  * natural responsibility of an entity or value object, add an operation to the model as a standalone interface declared
@@ -29,4 +31,5 @@ package org.jmolecules.ddd.annotation
 @Retention
 @MustBeDocumented
 @Target(AnnotationTarget.CLASS)
+@Stereotype
 annotation class Service
