@@ -15,10 +15,12 @@
  */
 package org.jmolecules.event.types;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
- * A domain event is a full-fledged part of the domain model, a representation of something that happened in the
- * domain. It allows making the events that the domain experts want to track or be notified of explicit, or which are
- * associated with state change in the other model objects.
+ * A domain event is a full-fledged part of the domain model, a representation of something that happened in the domain.
+ * It allows making the events that the domain experts want to track or be notified of explicit, or which are associated
+ * with state change in the other model objects.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
@@ -28,4 +30,5 @@ package org.jmolecules.event.types;
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
  *      Reference (Evans) - Domain Events</a>
  */
+@Stereotype
 public interface DomainEvent {}

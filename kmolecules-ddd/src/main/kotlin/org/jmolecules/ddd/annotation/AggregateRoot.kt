@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.annotation
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies an aggregate root, i.e. the root entity of an aggregate. An aggregate forms a cluster of consistent rules
  * usually formed around a set of entities by defining invariants based on the properties of the aggregate that have to
@@ -34,4 +36,5 @@ package org.jmolecules.ddd.annotation
 @Retention
 @MustBeDocumented
 @Target(AnnotationTarget.CLASS)
+@Stereotype
 annotation class AggregateRoot

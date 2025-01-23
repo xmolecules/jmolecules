@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.annotation
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies a [Repository]. Repositories simulate a collection of aggregates to which aggregate instances can be
  * added and removed. They usually also expose API to select a subset of aggregates matching certain criteria. Access to
@@ -33,4 +35,5 @@ package org.jmolecules.ddd.annotation
 @Retention
 @MustBeDocumented
 @Target(AnnotationTarget.CLASS)
+@Stereotype
 annotation class Repository

@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.types
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies a [Repository]. Repositories simulate a collection of aggregates to which aggregate instances can be
  * added and removed. They usually also expose API to select a subset of aggregates matching certain criteria. Access to
@@ -31,4 +33,5 @@ package org.jmolecules.ddd.types
  *
  * See also: [Domain-Driven Design Reference (Evans) - Repositories](https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf)
  */
+@Stereotype
 interface Repository<T : AggregateRoot<T, ID>, ID : Identifier>

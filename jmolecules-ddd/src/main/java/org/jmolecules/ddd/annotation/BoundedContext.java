@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies a bounded context. A description of a boundary (typically a subsystem, or the work of a particular team)
  * within which a particular model is defined and applicable. A bounded context has an architectural style and contains
@@ -37,6 +39,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.ANNOTATION_TYPE })
 @Documented
+@Stereotype(priority = 0)
 public @interface BoundedContext {
 
 	/**

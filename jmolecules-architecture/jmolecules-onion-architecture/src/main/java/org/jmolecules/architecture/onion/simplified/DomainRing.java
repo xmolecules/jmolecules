@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies the {@link DomainRing} in an onion architecture. The domain ring is the inner-most ring in the onion
  * architecture and is only coupled to itself. It models the truth of the business domain by consisting of behaviour
@@ -39,4 +41,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype
 public @interface DomainRing {}

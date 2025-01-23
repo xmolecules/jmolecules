@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies the {@link ApplicationServiceRing} in an onion architecture. The application service ring implements and
  * orchestrates business use case. To do so, it only depends on the inner rings, i.e. {@link DomainModelRing} and
@@ -37,4 +39,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype
 public @interface ApplicationServiceRing {}

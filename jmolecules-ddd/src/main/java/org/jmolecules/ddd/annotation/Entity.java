@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * Identifies an {@link Entity}. Entities represent a thread of continuity and identity, going through a lifecycle,
  * though their attributes may change. Means of identification may come from the outside, or it may be an arbitrary
@@ -38,6 +40,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
+@Stereotype(priority = 10)
 public @interface Entity {
 
 }

@@ -17,4 +17,6 @@ open module org.jmolecules.architecture.cqrs {
 
 	exports org.jmolecules.architecture.cqrs;
 	exports org.jmolecules.architecture.cqrs.annotation;
+
+	requires org.jmolecules.stereotype;
 }

@@ -21,6 +21,8 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.Stereotype;
+
 /**
  * In Hexagonal Architecture an {@link PrimaryPort} describes an interface into an application's core that is exposed to
  * the outside to drive the application. A {@link PrimaryAdapter} would refer to those ports in its implementation.
@@ -35,6 +37,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
+@Stereotype(priority = 100)
 public @interface PrimaryPort {
 
 	/**

@@ -15,6 +15,8 @@
  */
 package org.jmolecules.ddd.annotation
 
+import org.jmolecules.stereotype.Stereotype
+
 /**
  * Identifies a [Factory]. Factories encapsulate the responsibility of creating complex objects in general and
  * Aggregates in particular. Objects returned by the factory methods are guaranteed to be in valid state.
@@ -29,4 +31,5 @@ package org.jmolecules.ddd.annotation
 @Retention
 @MustBeDocumented
 @Target(AnnotationTarget.CLASS)
+@Stereotype
 annotation class Factory
