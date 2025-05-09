@@ -1,0 +1,2 @@
+assertj=AssertJ
+junit=JUnit
