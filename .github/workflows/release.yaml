@@ -1,0 +1,35 @@
+name: Release to Maven Central
+
+on:
+  push:
+    branches: [ release/release ]
+
+jobs:
+  build:
+    name: Release project
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Check out sources
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: 17
+        cache: 'maven'
+
+    - name: Install GPG key
+      run: |
+        echo "${{ secrets.GPG_PRIVATE_KEY }}" > gpg.asc
+        echo "${{ secrets.GPG_PASSPHRASE }}" | gpg --batch --yes --passphrase-fd 0 --import gpg.asc
+
+    - name: Release to Maven Central OSSRH
+      env:
+          CENTRAL_OSSRH_USERNAME: ${{ secrets.CENTRAL_OSSRH_USERNAME }}
+          CENTRAL_OSSRH_PASSWORD: ${{ secrets.CENTRAL_OSSRH_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      run: |
+        ./mvnw -B clean deploy -Psonatype -s settings.xml
