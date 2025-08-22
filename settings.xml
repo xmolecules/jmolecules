@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 	<servers>
 		<server>
-			<id>ossrh</id>
-			<username>${ossrhUsername}</username>
-			<password>${ossrhPassword}</password>
+			<id>central-ossrh</id>
+			<username>${env.CENTRAL_OSSRH_USERNAME}</username>
+			<password>${env.CENTRAL_OSSRH_PASSWORD}</password>
 		</server>
 	</servers>
 </settings>
