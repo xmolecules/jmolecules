@@ -1,21 +1,51 @@
 {
 	"stereotypes" : [
 		{
-			"id" : "org.jmolecules.architecture.onion.ApplicationRing",
-			"assignments" : [ "@org.jmolecules.architecture.onion.simplified.ApplicationRing" ],
-			"groups" : [ "org.jmolecules.architecture.onion" ],
-			"priority" : 10
+			"id" : "architecture.onion.ApplicationRing",
+			"assignments" : [
+				"@architecture.onion.classical.ApplicationRing",
+				"@architecture.onion.simplified.ApplicationRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 300
 		},
 		{
-			"id" : "org.jmolecules.architecture.onion.InfrastructureRing",
-			"assignments" : [ "@org.jmolecules.architecture.onion.simplified.InfrastructureRing" ],
-			"groups" : [ "org.jmolecules.architecture.onion" ],
-			"priority" : 0
+			"id" : "architecture.onion.DomainRing",
+			"assignments" : [
+				"@architecture.onion.simplified.DomainRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 200
+		},
+		{
+			"id" : "architecture.onion.DomainModelRing",
+			"assignments" : [
+				"@architecture.onion.classical.DomainModelRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 200
+		},
+		{
+			"id" : "architecture.onion.DomainServiceRing",
+			"assignments" : [
+				"@architecture.onion.classical.DomainServiceRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 200
+		},
+		{
+			"id" : "architecture.onion.InfrastructureRing",
+			"assignments" : [
+				"@architecture.onion.classical.InfrastructureRing",
+				"@architecture.onion.simplified.InfrastructureRing"
+			],
+			"groups" : [ "architecture.onion" ],
+			"priority" : 100
 		}
 	],
 	"groups" : [
 		{
-			"ids" : [ "org.jmolecules.architecture.onion" ],
+			"ids" : [ "architecture.onion" ],
 			"displayName" : "Onion Architecture"
 		}
 	]

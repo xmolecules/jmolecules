@@ -1,44 +1,44 @@
 {
 	"stereotypes" : [
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.PrimaryAdapter",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.PrimaryAdapter",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 100
 		},
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.SecondaryAdapter",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.SecondaryAdapter",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 200
 		},
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.Adapter",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.Adapter",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 300
 		},
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.PrimaryPort",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.PrimaryPort",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 100
 		},
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.SecondaryPort",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.SecondaryPort",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 200
 		},
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.Port",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.Port",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 300
 		},
 		{
-			"id" : "org.jmolecules.architecture.hexagonal.Application",
-			"groups" : [ "org.jmolecules.architecture.hexagonal" ],
+			"id" : "architecture.hexagonal.Application",
+			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 400
 		}
 	],
 	"groups" : [
 		{
-			"ids": [ "org.jmolecules.architecture.hexagonal" ],
+			"ids": [ "architecture.hexagonal" ],
 			"displayName" : "Hexagonal Architecture"
 		}
 	]

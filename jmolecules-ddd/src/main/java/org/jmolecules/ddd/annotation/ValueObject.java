@@ -38,7 +38,7 @@ import org.jmolecules.stereotype.Stereotype;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
-@Stereotype(priority = 0)
+@Stereotype(priority = 30)
 public @interface ValueObject {
 
 }
