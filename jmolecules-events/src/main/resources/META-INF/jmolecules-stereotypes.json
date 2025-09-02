@@ -1,13 +1,13 @@
 {
 	"stereotypes" : {
-		"org.jmolecules.event.DomainEvent" : {
+		"events.DomainEvent" : {
 			"assignments": [
 				"@org.jmolecules.event.annotation.DomainEvent",
 				"org.jmolecules.event.types.DomainEvent"
 			],
-			"groups": [ "org.jmolecules.event" ]
+			"groups": [ "events" ]
 		},
-		"org.jmolecules.event.DomainEventHandler" : {
+		"events.DomainEventHandler" : {
 			"assignments": [
 				"@org.jmolecules.event.annotation.DomainEventHandler"
 			],
@@ -15,7 +15,7 @@
 		}
 	},
 	"groups" : {
-		"org.jmolecules.event"  : {
+		"events"  : {
 			"displayName" : "Events",
 			"type" : "design",
 			"priority" : 20

@@ -30,5 +30,5 @@ import org.jmolecules.stereotype.Stereotype;
  *      Reference (Evans) - Value objects</a>
  * @since 1.3
  */
-@Stereotype(priority = 0)
+@Stereotype(priority = 30)
 public interface ValueObject {}
