@@ -1,45 +1,39 @@
 {
-	"stereotypes" : [
-		{
-			"id" : "architecture.hexagonal.PrimaryAdapter",
+	"stereotypes" : {
+		"architecture.hexagonal.PrimaryAdapter" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 100
 		},
-		{
-			"id" : "architecture.hexagonal.SecondaryAdapter",
+		"architecture.hexagonal.SecondaryAdapter" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 200
 		},
-		{
-			"id" : "architecture.hexagonal.Adapter",
+		"architecture.hexagonal.Adapter" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 300
 		},
-		{
-			"id" : "architecture.hexagonal.PrimaryPort",
+		"architecture.hexagonal.PrimaryPort" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 100
 		},
-		{
-			"id" : "architecture.hexagonal.SecondaryPort",
+		"architecture.hexagonal.SecondaryPort" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 200
 		},
-		{
-			"id" : "architecture.hexagonal.Port",
+		"architecture.hexagonal.Port" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 300
 		},
-		{
-			"id" : "architecture.hexagonal.Application",
+		"architecture.hexagonal.Application" : {
 			"groups" : [ "architecture.hexagonal" ],
 			"priority" : 400
 		}
-	],
-	"groups" : [
-		{
-			"ids": [ "architecture.hexagonal" ],
-			"displayName" : "Hexagonal Architecture"
+	},
+	"groups" : {
+		"architecture.hexagonal" : {
+			"displayName" : "Hexagonal Architecture",
+			"type" : "architecture",
+			"priority" : 20
 		}
-	]
+	}
 }

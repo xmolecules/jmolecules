@@ -1,25 +1,24 @@
 {
-	"stereotypes" : [
-		{
-			"id": "org.jmolecules.event.DomainEvent",
+	"stereotypes" : {
+		"org.jmolecules.event.DomainEvent" : {
 			"assignments": [
 				"@org.jmolecules.event.annotation.DomainEvent",
 				"org.jmolecules.event.types.DomainEvent"
 			],
 			"groups": [ "org.jmolecules.event" ]
 		},
-		{
-			"id": "org.jmolecules.event.DomainEventHandler",
+		"org.jmolecules.event.DomainEventHandler" : {
 			"assignments": [
 				"@org.jmolecules.event.annotation.DomainEventHandler"
 			],
 			"groups": [ "org.jmolecules.event" ]
 		}
-	],
-	"groups" : [
-		{
-			"ids" : [ "org.jmolecules.event" ],
-			"displayName" : "Events"
+	},
+	"groups" : {
+		"org.jmolecules.event"  : {
+			"displayName" : "Events",
+			"type" : "design",
+			"priority" : 20
 		}
-	]
+	}
 }

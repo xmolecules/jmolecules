@@ -1,7 +1,6 @@
 {
-	"stereotypes": [
-		{
-			"id": "ddd.AggregateRoot",
+	"stereotypes" : {
+		"ddd.AggregateRoot" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.AggregateRoot",
 				"org.jmolecules.ddd.types.AggregateRoot"
@@ -10,9 +9,9 @@
 				"ddd"
 			],
 			"priority": 0
-		},
-		{
-			"id": "ddd.Association",
+		},		
+		"ddd.Association" : {
+				
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.Association",
 				"org.jmolecules.ddd.types.Association"
@@ -22,8 +21,7 @@
 			],
 			"priority": 0
 		},
-		{
-			"id": "ddd.BoundedContext",
+		"ddd.BoundedContext" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.BoundedContext"
 			],
@@ -32,8 +30,7 @@
 			],
 			"priority": 0
 		},
-		{
-			"id": "ddd.Entity",
+		"ddd.Entity" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.Entity",
 				"org.jmolecules.ddd.types.Entity"
@@ -43,8 +40,7 @@
 			],
 			"priority": 10
 		},
-		{
-			"id": "ddd.Factory",
+		"ddd.Factory" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.Factory"
 			],
@@ -53,8 +49,7 @@
 			],
 			"priority": 10
 		},
-		{
-			"id": "ddd.Identifiable",
+		"ddd.Identifiable" : {
 			"assignments": [
 				"org.jmolecules.ddd.types.Identifiable"
 			],
@@ -63,8 +58,7 @@
 			],
 			"priority": 20
 		},
-		{
-			"id": "ddd.Identifier",
+		"ddd.Identifier" : {
 			"assignments": [
 				"org.jmolecules.ddd.types.Identifier"
 			],
@@ -73,8 +67,7 @@
 			],
 			"priority": 0
 		},
-		{
-			"id": "ddd.Module",
+		"ddd.Module" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.Module"
 			],
@@ -83,8 +76,7 @@
 			],
 			"priority": 0
 		},
-		{
-			"id": "ddd.Repository",
+		"ddd.Repository" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.Repository",
 				"org.jmolecules.ddd.types.Repository"
@@ -94,8 +86,7 @@
 			],
 			"priority": 0
 		},
-		{
-			"id": "ddd.Service",
+		"ddd.Service" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.Service"
 			],
@@ -104,8 +95,7 @@
 			],
 			"priority": 0
 		},
-		{
-			"id": "ddd.ValueObject",
+		"ddd.ValueObject" : {
 			"assignments": [
 				"@org.jmolecules.ddd.annotation.ValueObject",
 				"org.jmolecules.ddd.types.ValueObject"
@@ -115,11 +105,11 @@
 			],
 			"priority": 30
 		}
-	],
-	"groups": [
-		{
-			"ids": [ "ddd" ],
-			"displayName": "Domain-Driven Design"
+	},
+	"groups": {
+		"ddd" : {
+			"displayName": "Domain-Driven Design",
+			"type" : "design"
 		}
-	]
+	}
 }
