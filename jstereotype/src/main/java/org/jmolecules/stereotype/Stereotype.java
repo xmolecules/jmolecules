@@ -35,38 +35,34 @@ public @interface Stereotype {
 
 	/**
 	 * Alias of the {@link #name()} attribute.
-	 *
-	 * @return
 	 */
 	String value() default "";
 
 	/**
 	 * A human-readable name of the stereotype. Defaults to the simple name of the annotated type or concrete annotation
 	 * respectively.
-	 *
-	 * @return
 	 */
 	String name() default "";
 
 	/**
 	 * The identifier of the stereotype. Defaults to the fully qualified name of the annotated type or concrete annotation
 	 * respectively.
-	 *
-	 * @return
 	 */
 	String id() default "";
 
 	/**
-	 * The logical identifiers a stereotype belongs to.
-	 *
-	 * @return
+	 * The logical identifiers of the groups a stereotype belongs to.
 	 */
 	String[] groups() default {};
 
 	/**
 	 * A priority (lower value implies higher priority) of the stereotype.
-	 *
-	 * @return
 	 */
 	int priority() default 0;
+
+	/**
+	 * Configures whether the stereotype is only detected on the type or method itself or by inspecting the entire
+	 * inheritance hierarchy. Defaults to {@literal true}.
+	 */
+	boolean inherited() default true;
 }

@@ -26,21 +26,24 @@
 				"@org.jmolecules.architecture.hexagonal.PrimaryPort"
 			],
 			"groups" : [ "architecture.hexagonal" ],
-			"priority" : 100
+			"priority" : 100,
+			"inherited" : false
 		},
 		"architecture.hexagonal.SecondaryPort" : {
 			"assignments" : [
 				"@org.jmolecules.architecture.hexagonal.SecondaryPort"
 			],
 			"groups" : [ "architecture.hexagonal" ],
-			"priority" : 200
+			"priority" : 200,
+			"inherited" : false
 		},
 		"architecture.hexagonal.Port" : {
 			"assignments" : [
 				"@org.jmolecules.architecture.hexagonal.Port"
 			],
 			"groups" : [ "architecture.hexagonal" ],
-			"priority" : 300
+			"priority" : 300,
+			"inherited" : false
 		},
 		"architecture.hexagonal.Application" : {
 			"assignments" : [

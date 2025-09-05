@@ -41,7 +41,7 @@ import org.jmolecules.stereotype.Stereotype;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.PACKAGE, ElementType.TYPE })
 @Documented
-@Stereotype(priority = 300)
+@Stereotype(priority = 300, inherited = false)
 public @interface Port {
 
 	/**
