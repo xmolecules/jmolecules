@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<assertj.version>3.27.3</assertj.version>
 		<junit.version>5.12.2</junit.version>
-		<kotlin.version>1.9.25</kotlin.version>
+		<kotlin.version>2.2.10</kotlin.version>
 	</properties>
 
 	<licenses>
