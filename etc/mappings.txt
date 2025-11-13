@@ -1,2 +1,3 @@
 assertj=AssertJ
 junit=JUnit
+kotlin=Kotlin
