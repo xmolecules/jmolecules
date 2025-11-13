@@ -1,0 +1,39 @@
+{
+	"stereotypes" : {
+		"architecture.cqrs.Command" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.cqrs.annotation.Command",
+				"org.jmolecules.architecture.cqrs.Command",
+			],
+			"groups" : [ "architecture.cqrs" ]
+		},
+		"architecture.cqrs.CommandDispatcher" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.cqrs.annotation.CommandDispatcher",
+				"org.jmolecules.architecture.cqrs.CommandDispatcher",
+			],
+			"groups" : [ "architecture.cqrs" ]
+		},
+		"architecture.cqrs.CommandHandler" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.cqrs.annotation.CommandHandler",
+				"org.jmolecules.architecture.cqrs.CommandHandler",
+			],
+			"groups" : [ "architecture.cqrs" ]
+		},
+		"architecture.cqrs.QueryModel" : {
+			"assignments" : [
+				"@org.jmolecules.architecture.cqrs.annotation.QueryModel",
+				"org.jmolecules.architecture.cqrs.QueryModel",
+			],
+			"groups" : [ "architecture.cqrs" ]
+		}
+	},
+	"groups" : {
+		"architecture.cqrs" : {
+			"displayName" : "CQRS",
+			"type" : "architecture",
+			"priority" : 40
+		}
+	}
+}
