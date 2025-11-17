@@ -1,0 +1,59 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://schemas.jmolecules.org/jmolecules-stereotypes.schema.json",
+	"type": "object",
+	"description": "Configuration for jMolecules stereotypes",
+	"required": ["stereotypes"],
+	"properties": {
+		"stereotypes": {
+			"type": "object",
+			"description": "List of stereotype definitions that can be applied to code elements",
+			"patternProperties": {
+				"^@?[\\w.-]+$": {
+					"type": "object",
+					"required": ["assignments", "groups"],
+					"properties": {
+						"displayName": {
+							"type": "string",
+							"minLength": 1,
+							"description": "Human-readable name for the stereotype (optional)"
+						},
+						"assignments": {
+							"type": "array",
+							"description": "List of type or annotation assignments that this stereotype can be applied to",
+							"items": {
+								"type": "string",
+								"pattern": "^@?[\\w.-]+$",
+								"description": "Type or annotation identifier, optionally prefixed with @ for annotations"
+							},
+							"minItems": 1,
+							"uniqueItems": true
+						},
+						"groups": {
+							"type": "array",
+							"description": "Groups that this stereotype belongs to",
+							"items": {
+								"type": "string",
+								"pattern": "^[\\w.-]+$",
+								"description": "Group identifier using dot notation"
+							},
+							"minItems": 1,
+							"uniqueItems": true
+						},
+						"priority": {
+							"type": "integer",
+							"minimum": 0,
+							"default": 0,
+							"description": "Processing priority of the stereotype, defaults to 0"
+						}
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"groups": {
+			"$ref": "https://schemas.jmolecules.org/jmolecules-stereotype-groups.schema.json#/properties/groups"
+		}
+	},
+	"additionalProperties": false
+}
