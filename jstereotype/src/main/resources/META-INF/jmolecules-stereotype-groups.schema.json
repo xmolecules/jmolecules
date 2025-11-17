@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://schemas.jmolecules.org/jmolecules-groups.schema.json",
+	"type": "object",
+	"description": "Configuration for jMolecules stereotype groups",
+	"required": ["groups"],
+	"properties": {
+		"groups": {
+			"type": "object",
+			"description": "Group definitions that stereotypes can belong to",
+			"patternProperties": {
+				"^@?[\\w.-]+$": {
+					"type": "object",
+					"required": ["displayName"],
+					"properties": {
+						"displayName": {
+							"type": "string",
+							"minLength": 1,
+							"description": "Human-readable name for the group"
+						},
+						"priority": {
+							"type": "integer",
+							"minimum": 0,
+							"default": 0,
+							"description": "Processing priority of the group, defaults to 0"
+						},
+						"type": {
+							"type": "string",
+							"enum": [ "architecture", "design", "technical" ],
+							"default": "technical",
+							"description": "Type category of the group"
+						}
+					},
+					"additionalProperties": false
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}
