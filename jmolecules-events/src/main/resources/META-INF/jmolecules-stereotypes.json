@@ -11,14 +11,14 @@
 			"assignments": [
 				"@org.jmolecules.event.annotation.DomainEventHandler"
 			],
-			"groups": [ "org.jmolecules.event" ]
+			"groups": [ "events" ]
 		},
 		"events.Externalized" : {
 			"assignments": [
 				"@org.jmolecules.event.annotation.Externalized",
 				"org.jmolecules.event.types.Externalized"
 			],
-			"groups": [ "org.jmolecules.event" ]
+			"groups": [ "events" ]
 		}
 	},
 	"groups" : {
