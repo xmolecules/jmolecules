@@ -1,0 +1,32 @@
+graph TB
+    subgraph "Interface Layer"
+        Controller[Controller\n@InterfaceLayer]
+    end
+
+    subgraph "Application Layer"
+        UseCase[Use Case\n@ApplicationLayer]
+    end
+
+    subgraph "Domain Layer"
+        Aggregate[Aggregate Root\n@AggregateRoot]
+        Entity[Entity\n@Entity]
+        VO[Value Object\n@ValueObject]
+        Service[Domain Service\n@Service]
+        Repository[Repository\n@Repository]
+    end
+
+    subgraph "Infrastructure Layer"
+        RepositoryImpl[Repository Implementation\n@InfrastructureLayer]
+        Database[(Database)]
+        ExternalAPI[External API\n@InfrastructureLayer]
+    end
+
+    Controller --> UseCase
+    UseCase --> Aggregate
+    UseCase --> Repository
+    Aggregate --> Entity
+    Aggregate --> VO
+    Entity --> VO
+    Repository --> RepositoryImpl
+    RepositoryImpl --> Database
+    RepositoryImpl --> ExternalAPI

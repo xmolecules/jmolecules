@@ -1,0 +1,43 @@
+// Aggregate Root template
+import org.jmolecules.ddd.annotation.AggregateRoot;
+import org.jmolecules.ddd.annotation.Entity;
+
+@AggregateRoot
+@Entity
+public class ${AggregateRootName} {
+
+    private ${AggregateRootName}Id id;
+
+    private ${AggregateRootName}Number number;
+
+    private ${AggregateRootName}Total total;
+
+    private List<${AggregateRootName}LineItem> lineItems = new ArrayList<>();
+
+    protected ${AggregateRootName}() {
+        // Default constructor for instantiation
+    }
+
+    public static ${AggregateRootName} create() {
+        ${AggregateRootName} aggregate = new ${AggregateRootName}();
+        aggregate.id = ${AggregateRootName}Id.generate();
+        aggregate.number = ${AggregateRootName}Number.generate();
+        aggregate.total = ${AggregateRootName}Total.ZERO;
+        return aggregate;
+    }
+
+    public void addLineItem(Product product, int quantity) {
+        // Business logic here
+        ${AggregateRootName}LineItem item = new ${AggregateRootName}LineItem(this, product, quantity);
+        lineItems.add(item);
+        total = calculateTotal();
+    }
+
+    private ${AggregateRootName}Total calculateTotal() {
+        // Calculation logic
+        BigDecimal sum = lineItems.stream()
+                .map(item -> item.getTotal().getAmount())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        return ${AggregateRootName}Total.of(sum);
+    }
+}

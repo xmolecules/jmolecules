@@ -1,0 +1,199 @@
+# jMolecules Stereotypes Configuration
+
+This file contains information about jMolecules stereotypes and their properties, including both annotational and type-driven approaches.
+
+## Annotational vs Type-Driven Approaches
+
+jMolecules provides two complementary ways to define architectural concepts:
+
+### 1. Annotational Approach (Annotations)
+Useful for existing projects, minimal changes required.
+
+**Example:**
+```java
+import org.jmolecules.ddd.annotation.AggregateRoot;
+import org.jmolecules.ddd.annotation.Entity;
+import org.jmolecules.ddd.annotation.ValueObject;
+
+@AggregateRoot
+@Entity
+public class Order {
+
+    private OrderId id;
+
+    @ValueObject
+    public static class OrderId {
+        private String value;
+
+        private OrderId(String value) {
+            this.value = value;
+        }
+
+        public static OrderId of(String value) {
+            return new OrderId(value);
+        }
+    }
+}
+```
+
+### 2. Type-Driven Approach (Interfaces)
+Provides stronger type safety and compile-time checks.
+
+**Example:**
+```java
+import org.jmolecules.ddd.types.AggregateRoot;
+import org.jmolecules.ddd.types.Identifier;
+
+public class Order implements AggregateRoot<Order, OrderId> {
+
+    private OrderId id;
+
+    public class OrderId implements Identifier {
+        private String value;
+
+        private OrderId(String value) {
+            this.value = value;
+        }
+
+        public static OrderId of(String value) {
+            return new OrderId(value);
+        }
+    }
+}
+```
+
+## Stereotype Groups
+
+### Domain-Driven Design (DDD)
+```json
+{
+  "groups": [
+    {
+      "name": "ddd",
+      "displayName": "DDD Building Blocks",
+      "description": "Domain-Driven Design building blocks",
+      "properties": {
+        "layer": null,
+        "scope": null
+      }
+    }
+  ]
+}
+```
+
+## jMolecules Annotations
+
+### Core DDD Annotations
+
+#### Entities and Aggregates
+- `@Entity` - Represents a domain entity
+- `@AggregateRoot` - Represents an aggregate root entity
+- `@ValueObject` - Represents a value object
+- `@Service` - Represents a domain or application service
+- `@Repository` - Represents a repository for data access
+- `@Factory` - Represents a factory for creating complex objects
+
+#### Context and Modules
+- `@BoundedContext` - Represents a bounded context
+- `@Module` - Represents a module within a bounded context
+
+### Architecture Layer Annotations
+
+#### Layered Architecture
+- `@DomainLayer` - Represents the domain layer
+- `@ApplicationLayer` - Represents the application layer
+- `@InfrastructureLayer` - Represents the infrastructure layer
+- `@InterfaceLayer` - Represents the interface layer
+
+#### Onion Architecture
+- `@DomainModelRing` - For the core domain model
+- `@DomainServiceRing` - For domain services
+- `@ApplicationServiceRing` - For application services
+- `@InfrastructureRing` - For infrastructure and adapters
+
+#### Hexagonal Architecture
+- `@Application` - For the application core
+- `@PrimaryPort` - For primary (driving) ports
+- `@SecondaryPort` - For secondary (driven) ports
+- `@PrimaryAdapter` - For primary adapter implementations
+- `@SecondaryAdapter` - For secondary adapter implementations
+
+#### CQRS Architecture
+- `@Command` - Represents a command message
+- `@CommandDispatcher` - Represents a command dispatcher
+- `@CommandHandler` - Represents a command handler
+- `@QueryModel` - Represents a query model
+
+### Event-Driven Architecture
+
+#### Events and Handlers
+- `@DomainEvent` - Represents a domain event
+- `@DomainEventHandler` - Represents a domain event handler
+- `@DomainEventPublisher` - Represents a domain event publisher
+- `@Externalized` - Indicates an externalized event
+
+## Type-Driven Interfaces
+
+### Core DDD Interfaces
+
+#### Identifiers and Entities
+- `Identifier` - Base interface for all identifier types
+- `Identifiable<T extends Identifiable<T, ID>, ID extends Identifier>` - Base interface for identifiable objects
+- `Entity<T extends AggregateRoot<T, ID>, ID extends Identifier>` - Base interface for entities that belong to an aggregate
+
+#### Aggregates and Roots
+- `AggregateRoot<T extends AggregateRoot<T, ID>, ID extends Identifier>` - Base interface for aggregate roots
+- `Association<T extends AggregateRoot<T, ID>, ID extends Identifier>` - Represents an association to another aggregate
+
+#### Services and Repositories
+- `Service` - Base interface for services
+- `Repository<T extends AggregateRoot<T, ID>, ID extends Identifier>` - Base interface for repositories
+
+### Architecture Interfaces
+
+#### Layers
+- `DomainLayer` - Marker interface for domain layer components
+- `ApplicationLayer` - Marker interface for application layer components
+- `InfrastructureLayer` - Marker interface for infrastructure layer components
+- `InterfaceLayer` - Marker interface for interface layer components
+
+#### Event-Driven
+- `DomainEvent` - Marker interface for domain events
+- `DomainEventHandler` - Marker interface for domain event handlers
+- `DomainEventPublisher` - Marker interface for domain event publishers
+
+## Choosing an Approach
+
+### When to Use Annotational Approach
+- Existing codebase
+- Minimal changes required
+- Compatibility with legacy systems
+- Better integration with tools that read annotations
+
+### When to Use Type-Driven Approach
+- New projects
+- Strong type safety requirements
+- Compile-time validation
+- Better tool support for static analysis
+- Clearer intent from the type system
+
+### Combining Approaches
+You can mix both approaches:
+```java
+import org.jmolecules.ddd.annotation.AggregateRoot;
+import org.jmolecules.ddd.types.AggregateRoot;
+
+@AggregateRoot
+public class Order implements AggregateRoot<Order, OrderId> {
+    // Implementation
+}
+```
+
+## Best Practices
+
+1. **Consistency within a bounded context** - Choose one approach and stick with it
+2. **Communicate the choice** - Document which approach your team is using
+3. **Use type-driven for new code** - Provides stronger guarantees
+4. **Gradually migrate existing code** - Refactor to type-driven approach
+
+Both approaches are supported by jMolecules tools and integrations.
