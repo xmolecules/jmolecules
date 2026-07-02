@@ -29,7 +29,8 @@ import org.jmolecules.stereotype.Stereotype;
  *
  * @author Oliver Drotbohm
  * @author Stephan Pirnbaum
- * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a>
+ * @see <a href="https://alistair.cockburn.us/hexagonal-architecture/">Hexagonal Architecture</a> original article by Alistair Cockburn
+ * @see <a href="https://web.archive.org/web/20140329201018/http://alistair.cockburn.us/Hexagonal+architecture">Hexagonal Architecture (2014-03-29 snapshot)</a> version containing primary/secondary port terminology
  * @see PrimaryAdapter
  * @since 1.5
  */
