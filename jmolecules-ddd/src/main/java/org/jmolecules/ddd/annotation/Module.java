@@ -21,16 +21,19 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jmolecules.stereotype.ArchitecturalUnit;
 import org.jmolecules.stereotype.Stereotype;
 
 /**
- * Identifies a DDD module.
+ * Identifies a DDD module. Modules are {@link ArchitecturalUnit}s, i.e. tooling can consider them a unit of code that
+ * an architectural language is applied to.
  *
  * @author Christian Stettler
  * @author Henning Schwentner
  * @author Stephan Pirnbaum
  * @author Martin Schimak
  * @author Oliver Drotbohm
+ * @see ArchitecturalUnit
  * @see <a href="https://domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf">Domain-Driven Design
  *      Reference (Evans) - Modules</a>
  */
@@ -38,6 +41,7 @@ import org.jmolecules.stereotype.Stereotype;
 @Target({ ElementType.PACKAGE, ElementType.ANNOTATION_TYPE })
 @Documented
 @Stereotype(priority = 0)
+@ArchitecturalUnit
 public @interface Module {
 
 	/**

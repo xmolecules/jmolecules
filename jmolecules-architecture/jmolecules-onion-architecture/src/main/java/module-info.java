@@ -15,6 +15,7 @@
  */
 open module org.jmolecules.architecture.onion {
 
+	exports org.jmolecules.architecture.onion;
 	exports org.jmolecules.architecture.onion.classical;
 	exports org.jmolecules.architecture.onion.simplified;
 
