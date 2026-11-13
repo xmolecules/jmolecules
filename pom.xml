@@ -21,7 +21,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<assertj.version>3.27.6</assertj.version>
+		<assertj.version>3.27.7</assertj.version>
 		<dokka.version>2.1.0</dokka.version>
 		<java.version>11</java.version>
 		<junit.version>6.0.1</junit.version>
