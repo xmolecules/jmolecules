@@ -25,8 +25,8 @@ import org.jmolecules.stereotype.ArchitecturalUnit;
 
 /**
  * Declares the annotated package and its sub-packages to be a hexagon, i.e. an architectural unit structured according
- * to the rules of the Hexagonal Architecture. Multiple hexagons can exist in a code base, which allows tooling to verify
- * rules between them in addition to the ones applied within a single one. For example, secondary adapters of one
+ * to the rules of the Hexagonal Architecture. Multiple hexagons can exist in a code base, which allows tooling to
+ * verify rules between them in addition to the ones applied within a single one. For example, secondary adapters of one
  * hexagon might be allowed to access primary adapters of another one.
  *
  * @author Oliver Drotbohm
