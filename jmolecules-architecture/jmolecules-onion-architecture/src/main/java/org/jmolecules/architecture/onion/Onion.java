@@ -75,12 +75,30 @@ public @interface Onion {
 	Exposure[] exposes() default {};
 
 	/**
+	 * The rings of the onion exposed to other architectural units <em>in addition</em> to the ones exposed globally, or
+	 * the ones declared via {@link #exposes()}.
+	 *
+	 * @see #exposes()
+	 * @see Exposure
+	 */
+	Exposure[] additionallyExposes() default {};
+
+	/**
 	 * The rings of the onion whose types may refer to other architectural units. If not defined, tooling applies its
 	 * globally configured default.
 	 *
 	 * @see Referrer
 	 */
 	Referrer[] refersVia() default {};
+
+	/**
+	 * The rings of the onion whose types may refer to other architectural units <em>in addition</em> to the ones allowed
+	 * globally, or the ones declared via {@link #refersVia()}.
+	 *
+	 * @see #refersVia()
+	 * @see Referrer
+	 */
+	Referrer[] additionallyRefersVia() default {};
 
 	/**
 	 * The rings an onion can expose to other architectural units.

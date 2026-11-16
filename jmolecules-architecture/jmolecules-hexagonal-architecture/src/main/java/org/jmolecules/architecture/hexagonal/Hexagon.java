@@ -77,12 +77,30 @@ public @interface Hexagon {
 	Exposure[] exposes() default {};
 
 	/**
+	 * The roles of the types the hexagon exposes to other architectural units <em>in addition</em> to the ones exposed
+	 * globally, or the ones declared via {@link #exposes()}.
+	 *
+	 * @see #exposes()
+	 * @see Exposure
+	 */
+	Exposure[] additionallyExposes() default {};
+
+	/**
 	 * The roles of the hexagon's types that may refer to other architectural units. If not defined, tooling applies its
 	 * globally configured default.
 	 *
 	 * @see Referrer
 	 */
 	Referrer[] refersVia() default {};
+
+	/**
+	 * The roles of the hexagon's types that may refer to other architectural units <em>in addition</em> to the ones
+	 * allowed globally, or the ones declared via {@link #refersVia()}.
+	 *
+	 * @see #refersVia()
+	 * @see Referrer
+	 */
+	Referrer[] additionallyRefersVia() default {};
 
 	/**
 	 * The roles of types a hexagon can expose to other architectural units.
@@ -105,7 +123,13 @@ public @interface Hexagon {
 		/**
 		 * Exposes the hexagon's {@link Application} code.
 		 */
-		APPLICATION;
+		APPLICATION,
+
+		/**
+		 * Exposes the hexagon's {@link SecondaryPort}s, e.g. to allow other units to use repositories directly instead of
+		 * going through a {@link PrimaryPort} and the {@link Application} code.
+		 */
+		SECONDARY_PORTS;
 	}
 
 	/**
@@ -125,6 +149,23 @@ public @interface Hexagon {
 		 * Allows the hexagon's {@link Application} code to refer to other units, including types without any hexagonal
 		 * stereotype.
 		 */
-		APPLICATION;
+		APPLICATION,
+
+		/**
+		 * Allows the hexagon's {@link PrimaryAdapter}s to refer to other units, e.g. to use their domain types as input.
+		 */
+		PRIMARY_ADAPTERS,
+
+		/**
+		 * Allows the hexagon's {@link PrimaryPort}s to refer to other units, e.g. to use their domain types in their
+		 * signatures.
+		 */
+		PRIMARY_PORTS,
+
+		/**
+		 * Allows the hexagon's {@link SecondaryPort}s to refer to other units, e.g. to use their domain types in their
+		 * signatures.
+		 */
+		SECONDARY_PORTS;
 	}
 }
